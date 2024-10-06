@@ -1,0 +1,15 @@
+*.c
+*.h
+*.perl
+# Ignore some files inside gizmo
+gizmo/Makefile.systype
+gizmo/Template_Config.sh
+gizmo/config-makefile
+gizmo/Doxyfile
+gizmo/Makefile
+gizmo/README.md
+# Ignore all folders inside git
+gizmo/*/  
+
+# Ignore output file
+output/

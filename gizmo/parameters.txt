@@ -1,0 +1,42 @@
+Initial_Conditions_Format        3
+Initial_Conditions_File          /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapdir_120
+Initial_Simulation_Time          0.250000
+Final_Simulation_Time            0.251603   % Stop at the next redshift. z = 2.974521875
+Output_Directory                 /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output
+Use_Tabulated_Snapshot_Times     1
+Snapshot_Times_Table_Filename    ./snapshot_scale-factors.txt
+Maximum_Timestep_Allowed         0.005
+MaxSimulationWallTime_in_Seconds 3600       % 1 hour in seconds
+ParticleNumberMemoryImbalance_Limit 5
+Effective_Kernel_NeighborNumber  32
+%
+Cosmological_Simulation_On       1
+Box_Size_In_Code_Units           85500      % 85.5 Mpc 
+Omega_Matter                     0.31
+Omega_Lambda                     0.69
+Omega_Baryon                     0.048
+Hubble_Param_Little_h            0.68
+%
+Softening_Type0                  0.001
+Softening_Type0_MaxPhysLimit     0.0001
+Softening_Type1                  0.33
+Softening_Type1_MaxPhysLimit     0.033
+Softening_Type2                  1
+Softening_Type2_MaxPhysLimit     0.1
+Softening_Type3                  2
+Softening_Type3_MaxPhysLimit     0.2
+Softening_Type4                  0.033
+Softening_Type4_MaxPhysLimit     0.0033
+Softening_Type5                  0.016
+Softening_Type5_MaxPhysLimit     0.0016
+%
+UnitLength_in_cm                 3.08568e21
+UnitMass_in_g                    1.989e43
+UnitVelocity_in_cm_per_s         1.0e5
+UnitMagneticField_in_gauss       1.0         % 1 gauss  
+Minimum_Gas_Temperature          10 
+%
+B_initial_x                      1e-10
+B_initial_y                      1e-10
+B_initial_z                      1e-10
+%
