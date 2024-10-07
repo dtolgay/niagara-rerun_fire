@@ -15,7 +15,8 @@ gizmo/TREECOOL
 # Ignore all folders inside git
 gizmo/*/  
 # Ignore output file
-output/
+output/snapdir*/
+*.ipynb_checkpoints/
 
 # Add gizmo runs to git
 !gizmo/gizmo_runs
