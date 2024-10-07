@@ -1,5 +1,8 @@
 *.c
 *.h
+*.o
+*.dat
+gizmo/GIZMO
 *.perl
 # Ignore some files inside gizmo
 gizmo/Makefile.systype
@@ -8,8 +11,11 @@ gizmo/config-makefile
 gizmo/Doxyfile
 gizmo/Makefile
 gizmo/README.md
+gizmo/TREECOOL
 # Ignore all folders inside git
 gizmo/*/  
-
 # Ignore output file
 output/
+
+# Add gizmo runs to git
+!gizmo/gizmo_runs

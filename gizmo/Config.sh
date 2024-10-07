@@ -11,7 +11,7 @@ IO_COMPRESS_HDF5     		    # write HDF5 in compressed form (will slow down snaps
 ####################################################################################################
 # --------------------------------------- Multi-Threading and Parallelization options
 ####################################################################################################
-OPENMP=1                       # top-level switch for explicit OpenMP implementation
+OPENMP=20                       # top-level switch for explicit OpenMP implementation
 MULTIPLEDOMAINS=16             # Multi-Domain option for the top-tree level (alters load-balancing)
 ####################################################################################################
 
