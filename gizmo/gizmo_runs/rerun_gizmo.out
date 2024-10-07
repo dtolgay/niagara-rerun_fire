@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------------------
-Task with the maximum commited memoryAvailMem:	 Largest =  173297.64 Mb (on task=480), Smallest =  172621.18 Mb (on task=720), Average =  173014.53 Mb
+Task with the maximum commited memoryAvailMem:	 Largest =  173269.32 Mb (on task=680), Smallest =  172586.57 Mb (on task=360), Average =  172968.29 Mb
 Total Mem:	 Largest =  193084.14 Mb (on task=0), Smallest =  193084.14 Mb (on task=0), Average =  193084.14 Mb
-Committed_AS:	 Largest =   20462.95 Mb (on task=720), Smallest =   19786.50 Mb (on task=480), Average =   20069.61 Mb
+Committed_AS:	 Largest =   20497.57 Mb (on task=360), Smallest =   19814.82 Mb (on task=680), Average =   20115.85 Mb
 SwapTotal:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
 SwapFree:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
-AllocMem:	 Largest =   20462.95 Mb (on task=720), Smallest =   19786.50 Mb (on task=480), Average =   20069.61 Mb
+AllocMem:	 Largest =   20497.57 Mb (on task=360), Smallest =   19814.82 Mb (on task=680), Average =   20115.85 Mb
 -------------------------------------------------------------------------------------------
 
 
-System time: Mon Oct  7 13:16:54 2024
-This is GIZMO, version 2022, running on nia0018.scinet.local as dtolgay.
-Build on nia-login03.scinet.local by dtolgay from main:ece3719 at https://github.com/dtolgay/niagara-rerun_fire.git, Oct  7 2024 12:23:40
+System time: Mon Oct  7 16:32:15 2024
+This is GIZMO, version 2022, running on nia0116.scinet.local as dtolgay.
+Build on nia-login05.scinet.local by dtolgay from main:7e5e6a9 at https://github.com/dtolgay/niagara-rerun_fire.git, Oct  7 2024 16:28:44
 
 Code was compiled with settings:
 
@@ -20,14 +20,14 @@ Code was compiled with settings:
         MULTIPLEDOMAINS=16
         PMGRID=512
         HYDRO_MESHLESS_FINITE_MASS
-        FIRE_PHYSICS_DEFAULTS=3
+        FIRE_PHYSICS_DEFAULTS=2
         FIRE_MHD
 
 Running on 800 MPI tasks.
 Using 2 OpenMP threads
 
-Size of particle structure       704  [bytes]
-Size of hydro-cell structure   1064  [bytes]
+Size of particle structure       672  [bytes]
+Size of hydro-cell structure   944  [bytes]
 
 Obtaining parameters from file './parameters.txt':
 Initial_Conditions_Format                         3
@@ -38,7 +38,7 @@ Output_Directory                                  /scratch/m/murray/dtolgay/gizm
 Use_Tabulated_Snapshot_Times                      1
 Snapshot_Times_Table_Filename                     ./snapshot_scale-factors.txt
 Maximum_Timestep_Allowed                          0.005
-MaxSimulationWallTime_in_Seconds                  3600
+MaxSimulationWallTime_in_Seconds                  43200
 ParticleNumberMemoryImbalance_Limit               5
 Effective_Kernel_NeighborNumber                   32
 MaxMemSize                                        4000
@@ -96,7 +96,7 @@ Tag NumFilesPerSnapshot (Number_of_Files_per_Snapshot) not set in parameter file
 Tag NumFilesWrittenInParallel (Number_of_Files_Written_in_Parallel) not set in parameter file: defaulting to only main-task writes (=1) 
 Tag GravityConstantInternal (GravityConstant_inCodeUnits) not set in parameter file: defaulting to calculating in terms of other specified units if needed (=0) 
 Tag InitGasTemp (Initial_Gas_Temperature) not set in parameter file: defaulting to assume temperatures defined in ICs (=0) 
-Tag CritPhysDensity (-) not set in parameter file: using FIRE-3 default of 1/cm3 (=1) 
+Tag CritPhysDensity (-) not set in parameter file: using FIRE-1/2 default of 100/cm3 (=100) 
 Tag SfEffPerFreeFall (-) not set in parameter file: defaulting to FIRE-default of unity (=1) 
 Tag TurbDiffusionCoefficient (-) not set in parameter file: code was compiled with turbulent diffusion, so will default to calculating the coefficients without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
 Tag ConductionCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski conductivity, so will default to calculating the physical coefficient without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
@@ -133,8 +133,8 @@ Initializing Ewald correction...
  ..initialization of periodic boundaries finished.
 Allocated 1.00391 MByte for rhogrid.
 Allocated 16.0312 MByte for FFT kernel(s) and rhogrid.
-Allocated 626.271 MByte for particle data storage.
-Allocated 929.362 MByte for storage of hydro data.
+Allocated 598.321 MByte for particle data storage.
+Allocated 824.547 MByte for storage of hydro data.
 
 Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.0.hdf5' on task=0 (contains 36121293 particles.)
  ..distributing this file to tasks 0-199
@@ -159,12 +159,7 @@ reading block 10 (SmoothingLength)...
 reading block 11 (StarFormationRate)...
 reading block 12 (StellarFormationTime)...
 reading block 17 (Metallicity)...
-reading block 37 (Potential)...
 reading block 53 (MagneticField)...
-reading block 67 (CoolingRate)...
-reading block 77 (Pressure)...
-reading block 78 (SoundSpeed)...
-reading block 132 (MolecularMassFraction)...
 
 Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.1.hdf5' on task=200 (contains 37372188 particles.)
  ..distributing this file to tasks 200-399
@@ -189,12 +184,7 @@ reading block 10 (SmoothingLength)...
 reading block 11 (StarFormationRate)...
 reading block 12 (StellarFormationTime)...
 reading block 17 (Metallicity)...
-reading block 37 (Potential)...
 reading block 53 (MagneticField)...
-reading block 67 (CoolingRate)...
-reading block 77 (Pressure)...
-reading block 78 (SoundSpeed)...
-reading block 132 (MolecularMassFraction)...
 
 Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.2.hdf5' on task=400 (contains 37791547 particles.)
  ..distributing this file to tasks 400-599
@@ -219,12 +209,7 @@ reading block 10 (SmoothingLength)...
 reading block 11 (StarFormationRate)...
 reading block 12 (StellarFormationTime)...
 reading block 17 (Metallicity)...
-reading block 37 (Potential)...
 reading block 53 (MagneticField)...
-reading block 67 (CoolingRate)...
-reading block 77 (Pressure)...
-reading block 78 (SoundSpeed)...
-reading block 132 (MolecularMassFraction)...
 
 Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.3.hdf5' on task=600 (contains 35258160 particles.)
  ..distributing this file to tasks 600-799
@@ -249,19 +234,14 @@ reading block 10 (SmoothingLength)...
 reading block 11 (StarFormationRate)...
 reading block 12 (StellarFormationTime)...
 reading block 17 (Metallicity)...
-reading block 37 (Potential)...
 reading block 53 (MagneticField)...
-reading block 67 (CoolingRate)...
-reading block 77 (Pressure)...
-reading block 78 (SoundSpeed)...
-reading block 132 (MolecularMassFraction)...
 Reading done. Total number of particles :  0146543188
 
-Domain decomposition building... LevelToTimeBin[TakeLevel=0]=0  (presently allocated=1573.43 MB)
+Domain decomposition building... LevelToTimeBin[TakeLevel=0]=0  (presently allocated=1440.66 MB)
  ..allocated 0.572876 MByte for top-level domain structure
- ..using 14.6829 MB of temporary storage for domain decomposition... (presently allocated=1588.68 MB)
+ ..using 14.6829 MB of temporary storage for domain decomposition... (presently allocated=1455.92 MB)
 
-In 'DOMAIN', domain_Decomposition()/domain.c/208: Largest Allocation = 1588.69 Mbyte (on task=0), Smallest = 1583.56 Mbyte, Average = 1587.65 Mbyte
+In 'DOMAIN', domain_Decomposition()/domain.c/208: Largest Allocation = 1455.92 Mbyte (on task=0), Smallest = 1450.79 Mbyte, Average = 1454.88 Mbyte
 ------------------------ Allocated Memory Blocks----------------------------------------
 Task   Nr F          Variable      MBytes   Cumulative         Function/File/Linenumber
 ----------------------------------------------------------------------------------------
@@ -295,130 +275,86 @@ Task   Nr F          Variable      MBytes   Cumulative         Function/File/Lin
    0   27 0   NextActiveParti      3.4939      22.1609  allocate_memory()/system/allocate/43
    0   28 0     NextInTimeBin      3.4939      25.6547  allocate_memory()/system/allocate/46
    0   29 0     PrevInTimeBin      3.4939      29.1486  allocate_memory()/system/allocate/49
-   0   30 0    ParticleData_P    614.9164     644.0650  allocate_memory()/system/allocate/55
-   0   31 0     GasCellData_P    929.3623    1573.4272  allocate_memory()/system/allocate/69
-   0   32 0   DomainStartList      0.0488    1573.4761  domain_allocate()/domain.c/296
-   0   33 0     DomainEndList      0.0488    1573.5249  domain_allocate()/domain.c/299
-   0   34 0          TopNodes      0.4752    1574.0001  domain_allocate()/domain.c/302
-   0   35 0        domain_key     13.9754    1587.9755  domain_Decompos()/domain.c/155
-   0   36 0              toGo      0.0031    1587.9785  domain_Decompos()/domain.c/158
-   0   37 0           toGoGas      0.0031    1587.9816  domain_Decompos()/domain.c/160
-   0   38 0             toGet      0.0031    1587.9846  domain_Decompos()/domain.c/162
-   0   39 0          toGetGas      0.0031    1587.9877  domain_Decompos()/domain.c/164
-   0   40 0      list_NumPart      0.0031    1587.9908  domain_Decompos()/domain.c/166
-   0   41 0        list_N_gas      0.0031    1587.9938  domain_Decompos()/domain.c/168
-   0   42 0         list_load      0.0031    1587.9969  domain_Decompos()/domain.c/170
-   0   43 0      list_loadgas      0.0031    1587.9999  domain_Decompos()/domain.c/172
-   0   44 0         list_work      0.0061    1588.0060  domain_Decompos()/domain.c/174
-   0   45 0      list_workgas      0.0061    1588.0121  domain_Decompos()/domain.c/176
-   0   46 0        domainWork      0.0280    1588.0401  domain_Decompos()/domain.c/178
-   0   47 0     domainWorkGas      0.0280    1588.0680  domain_Decompos()/domain.c/180
-   0   48 0       domainCount      0.0280    1588.0960  domain_Decompos()/domain.c/182
-   0   49 0    domainCountGas      0.0280    1588.1239  domain_Decompos()/domain.c/184
-   0   50 0          topNodes      0.5591    1588.6830  domain_Decompos()/domain.c/197
+   0   30 0    ParticleData_P    586.9656     616.1142  allocate_memory()/system/allocate/55
+   0   31 0     GasCellData_P    824.5470    1440.6612  allocate_memory()/system/allocate/69
+   0   32 0   DomainStartList      0.0488    1440.7100  domain_allocate()/domain.c/296
+   0   33 0     DomainEndList      0.0488    1440.7589  domain_allocate()/domain.c/299
+   0   34 0          TopNodes      0.4752    1441.2341  domain_allocate()/domain.c/302
+   0   35 0        domain_key     13.9754    1455.2094  domain_Decompos()/domain.c/155
+   0   36 0              toGo      0.0031    1455.2125  domain_Decompos()/domain.c/158
+   0   37 0           toGoGas      0.0031    1455.2155  domain_Decompos()/domain.c/160
+   0   38 0             toGet      0.0031    1455.2186  domain_Decompos()/domain.c/162
+   0   39 0          toGetGas      0.0031    1455.2216  domain_Decompos()/domain.c/164
+   0   40 0      list_NumPart      0.0031    1455.2247  domain_Decompos()/domain.c/166
+   0   41 0        list_N_gas      0.0031    1455.2278  domain_Decompos()/domain.c/168
+   0   42 0         list_load      0.0031    1455.2308  domain_Decompos()/domain.c/170
+   0   43 0      list_loadgas      0.0031    1455.2339  domain_Decompos()/domain.c/172
+   0   44 0         list_work      0.0061    1455.2400  domain_Decompos()/domain.c/174
+   0   45 0      list_workgas      0.0061    1455.2461  domain_Decompos()/domain.c/176
+   0   46 0        domainWork      0.0280    1455.2740  domain_Decompos()/domain.c/178
+   0   47 0     domainWorkGas      0.0280    1455.3020  domain_Decompos()/domain.c/180
+   0   48 0       domainCount      0.0280    1455.3299  domain_Decompos()/domain.c/182
+   0   49 0    domainCountGas      0.0280    1455.3579  domain_Decompos()/domain.c/184
+   0   50 0          topNodes      0.5591    1455.9170  domain_Decompos()/domain.c/197
 ----------------------------------------------------------------------------------------
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.008  ..new value=0.0104
  ..allocated 0.715416 MByte for top-level domain structure
- ..using 14.8841 MB of temporary storage for domain decomposition... (presently allocated=1589.03 MB)
+ ..using 14.8841 MB of temporary storage for domain decomposition... (presently allocated=1456.26 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0104  ..new value=0.01352
  ..allocated 0.900692 MByte for top-level domain structure
- ..using 15.1457 MB of temporary storage for domain decomposition... (presently allocated=1589.47 MB)
+ ..using 15.1457 MB of temporary storage for domain decomposition... (presently allocated=1456.71 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.01352  ..new value=0.017576
  ..allocated 1.14161 MByte for top-level domain structure
- ..using 15.4858 MB of temporary storage for domain decomposition... (presently allocated=1590.05 MB)
+ ..using 15.4858 MB of temporary storage for domain decomposition... (presently allocated=1457.29 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.017576  ..new value=0.0228488
  ..allocated 1.45477 MByte for top-level domain structure
- ..using 15.9279 MB of temporary storage for domain decomposition... (presently allocated=1590.81 MB)
+ ..using 15.9279 MB of temporary storage for domain decomposition... (presently allocated=1458.04 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0228488  ..new value=0.0297034
  ..allocated 1.86196 MByte for top-level domain structure
- ..using 16.5028 MB of temporary storage for domain decomposition... (presently allocated=1591.79 MB)
+ ..using 16.5028 MB of temporary storage for domain decomposition... (presently allocated=1459.03 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0297034  ..new value=0.0386145
  ..allocated 2.3912 MByte for top-level domain structure
- ..using 17.2499 MB of temporary storage for domain decomposition... (presently allocated=1593.07 MB)
+ ..using 17.2499 MB of temporary storage for domain decomposition... (presently allocated=1460.3 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0386145  ..new value=0.0501988
  ..allocated 3.07926 MByte for top-level domain structure
- ..using 18.2213 MB of temporary storage for domain decomposition... (presently allocated=1594.73 MB)
+ ..using 18.2213 MB of temporary storage for domain decomposition... (presently allocated=1461.96 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0501988  ..new value=0.0652585
  ..allocated 3.97373 MByte for top-level domain structure
- ..using 19.4841 MB of temporary storage for domain decomposition... (presently allocated=1596.89 MB)
+ ..using 19.4841 MB of temporary storage for domain decomposition... (presently allocated=1464.12 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.0652585  ..new value=0.084836
  ..allocated 5.13655 MByte for top-level domain structure
- ..using 21.1257 MB of temporary storage for domain decomposition... (presently allocated=1599.69 MB)
+ ..using 21.1257 MB of temporary storage for domain decomposition... (presently allocated=1466.92 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.084836  ..new value=0.110287
  ..allocated 6.6482 MByte for top-level domain structure
- ..using 23.2598 MB of temporary storage for domain decomposition... (presently allocated=1603.34 MB)
+ ..using 23.2598 MB of temporary storage for domain decomposition... (presently allocated=1470.57 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.110287  ..new value=0.143373
  ..allocated 8.61335 MByte for top-level domain structure
- ..using 26.0341 MB of temporary storage for domain decomposition... (presently allocated=1608.07 MB)
+ ..using 26.0341 MB of temporary storage for domain decomposition... (presently allocated=1475.31 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.143373  ..new value=0.186385
  ..allocated 11.168 MByte for top-level domain structure
- ..using 29.6408 MB of temporary storage for domain decomposition... (presently allocated=1614.24 MB)
+ ..using 29.6408 MB of temporary storage for domain decomposition... (presently allocated=1481.47 MB)
 Can't combine trees due to lack of storage. Will try again.
 Increasing TopNodeAllocFactor=0.186385  ..new value=0.2423
  ..allocated 14.4892 MByte for top-level domain structure
- ..using 34.3295 MB of temporary storage for domain decomposition... (presently allocated=1622.25 MB)
+ ..using 34.3295 MB of temporary storage for domain decomposition... (presently allocated=1489.48 MB)
  ..NTopNodes before=172345
 Increasing TopNodeAllocFactor=0.2423  ..new value=0.31499
  ..allocated 18.8066 MByte for top-level domain structure
- ..using 40.4247 MB of temporary storage for domain decomposition... (presently allocated=1632.66 MB)
+ ..using 40.4247 MB of temporary storage for domain decomposition... (presently allocated=1499.89 MB)
  ..NTopNodes before=172345
  ..NTopnodes after=221953
  ..NTopleaves= 194209  NTopnodes=221953 (space for 288497)
 Balance: gravity work-load balance=1.06662   memory-balance=1.07376   hydro work-load balance=1.07033
  ..iter=0 exchange of 0146335175 particles (ret=0)
-
-scontrol show job 13691376
-JobId=13691376 JobName=rerun_gizmo
-   UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
-   Priority=2028347 Nice=0 Account=rrg-rbond-ac QOS=normal
-   JobState=CANCELLED Reason=None Dependency=(null)
-   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
-   RunTime=00:07:40 TimeLimit=00:16:00 TimeMin=N/A
-   SubmitTime=2024-10-07T13:11:29 EligibleTime=2024-10-07T13:11:29
-   AccrueTime=2024-10-07T13:11:29
-   StartTime=2024-10-07T13:16:48 EndTime=2024-10-07T13:24:28 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-07T13:16:48 Scheduler=Main
-   Partition=compute AllocNode:Sid=nia-login03:139190
-   ReqNodeList=(null) ExcNodeList=(null)
-   NodeList=nia[0018-0019,0056,0099,0120,0132,0141,0177,0211,0260,0278,0311,0317,0398,0433,0435,0453,0458,0485,0502]
-   BatchHost=nia0018
-   NumNodes=20 NumCPUs=1600 NumTasks=800 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-   ReqTRES=cpu=800,mem=3500000M,node=20,billing=400
-   AllocTRES=cpu=1600,mem=3500000M,node=20,billing=800
-   Socks/Node=* NtasksPerN:B:S:C=40:0:*:* CoreSpec=*
-   MinCPUsNode=40 MinMemoryNode=175000M MinTmpDiskNode=0
-   Features=[skylake|cascade] DelayBoot=00:00:00
-   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
-   Command=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/run_gizmo.sh
-   WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo
-   Comment=/opt/slurm/bin/sbatch --export=NONE run_gizmo.sh 
-   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo.err
-   StdIn=/dev/null
-   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo.out
-   Power=
-   MailUser=dtolgay@scinet.local MailType=BEGIN
-   
-
-sacct -j 13691376
-JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
-13691376     rerun_giz+ rrg-rbond+   00:07:40                        00:03.785  00:02.187      0:0 
-13691376.ba+      batch rrg-rbond+   00:07:42   1616456K     13864K  00:00.355  00:00.625     0:15 
-13691376.ex+     extern rrg-rbond+   00:07:42    148744K      1092K  00:00.012  00:00.005      0:0 
-13691376.0   hydra_bst+ rrg-rbond+   00:07:42 321323888K  28251872K  00:02.721  00:01.269     0:15 
-13691376.1   hydra_bst+ rrg-rbond+   00:07:41 320393972K  26537616K  00:00.147  00:00.073     0:15 
-13691376.2   hydra_bst+ rrg-rbond+   00:07:41 320535240K  26602124K  00:00.148  00:00.070     0:15 
-13691376.3   hydra_bst+ rrg-rbond+   00:07:41 320744620K  27710592K  00:00.246  00:00.079     0:15 
-13691376.4   hydra_bst+ rrg-rbond+   00:07:41 320670924K  27117696K  00:00.153  00:00.063     0:15 

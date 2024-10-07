@@ -28,5 +28,5 @@ HYDRO_MESHLESS_FINITE_MASS     # solve hydro using the mesh-free Lagrangian (fix
 ####################################################################################################
 # ----------------- Galaxy formation & Galactic Star formation
 ####################################################################################################
-FIRE_PHYSICS_DEFAULTS=3  # set desired FIRE version
+FIRE_PHYSICS_DEFAULTS=2  # set desired FIRE version
 FIRE_MHD                 # (optional) MHD, cond, visc
