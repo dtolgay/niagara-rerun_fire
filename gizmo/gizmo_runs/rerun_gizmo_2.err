@@ -1,0 +1,5 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) NiaEnv/2019b
+Abort(812) on node 1 (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 812) - process 1

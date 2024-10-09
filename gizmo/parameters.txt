@@ -9,7 +9,7 @@ Maximum_Timestep_Allowed                0.005
 MaxSimulationWallTime_in_Seconds        43200        % 12 hour in seconds
 ParticleNumberMemoryImbalance_Limit     5
 Effective_Kernel_NeighborNumber         32
-MaxMemSize                              4000        % sets maximum MPI process memory use in MByte
+MaxMemSize                              4000        % sets maximum MPI process memory use in MByte. 202 GB (188 GiB) of RAM per node, there are 40 cores each.
 
 %
 Cosmological_Simulation_On              1

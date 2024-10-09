@@ -1,12 +1,11 @@
 #!/bin/bash
 #SBATCH --account=rrg-rbond-ac
-#SBATCH --nodes=20
+#SBATCH --nodes=3
 #SBATCH --ntasks-per-node=40
-#SBATCH --time=12:00:00
+#SBATCH --time=00:15:01
 #SBATCH --job-name=rerun_gizmo
-#SBATCH --output=gizmo_runs/rerun_gizmo.out
-#SBATCH --error=gizmo_runs/rerun_gizmo.err
-#SBATCH --mail-type=BEGIN          # Send an email when the job starts
+#SBATCH --output=gizmo_runs/rerun_gizmo_3.out
+#SBATCH --error=gizmo_runs/rerun_gizmo_3.err
 
 
 cd /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo 
@@ -21,4 +20,4 @@ module load intel intelmpi gsl hdf5 fftw
 # rm gizmo_runs/*.err
 
 # Run gizmo 
-mpirun -np 800 ./GIZMO ./parameters.txt 2
+mpirun -np 120 ./GIZMO ./parameters.txt 2

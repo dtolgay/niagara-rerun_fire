@@ -1,0 +1,183 @@
+-------------------------------------------------------------------------------------------
+AvailMem:	 Largest =  172857.34 Mb (on task=40), Smallest =  172676.44 Mb (on task=0), Average =  172766.89 Mb
+Total Mem:	 Largest =  193084.17 Mb (on task=40), Smallest =  193084.14 Mb (on task=0), Average =  193084.15 Mb
+Committed_AS:	 Largest =   20407.70 Mb (on task=0), Smallest =   20226.82 Mb (on task=40), Average =   20317.26 Mb
+SwapTotal:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
+SwapFree:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
+AllocMem:	 Largest =   20407.70 Mb (on task=0), Smallest =   20226.82 Mb (on task=40), Average =   20317.26 Mb
+-------------------------------------------------------------------------------------------
+Task with the maximum commited memory
+
+System time: Wed Oct  9 15:52:30 2024
+This is GIZMO, version 2022, running on nia1503.scinet.local as dtolgay.
+Build on nia-login03.scinet.local by dtolgay from main:5d9e5dc at https://github.com/dtolgay/niagara-rerun_fire.git, Oct  9 2024 15:51:06
+
+Code was compiled with settings:
+
+        BOX_PERIODIC
+        IO_COMPRESS_HDF5
+        OPENMP=2
+        MULTIPLEDOMAINS=12
+        PMGRID=512
+        HYDRO_MESHLESS_FINITE_MASS
+        FIRE_PHYSICS_DEFAULTS=2
+        FIRE_MHD
+
+Running on 80 MPI tasks.
+Using 2 OpenMP threads
+
+Size of particle structure       672  [bytes]
+Size of hydro-cell structure   944  [bytes]
+
+Obtaining parameters from file './parameters.txt':
+Initial_Conditions_Format                         3
+Initial_Conditions_File                           /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120
+Initial_Simulation_Time                           0.25
+Final_Simulation_Time                             0.251603
+Output_Directory                                  /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output
+Use_Tabulated_Snapshot_Times                      1
+Snapshot_Times_Table_Filename                     ./snapshot_scale-factors.txt
+Maximum_Timestep_Allowed                          0.005
+MaxSimulationWallTime_in_Seconds                  43200
+ParticleNumberMemoryImbalance_Limit               5
+Effective_Kernel_NeighborNumber                   32
+MaxMemSize                                        4000
+Cosmological_Simulation_On                        1
+Box_Size_In_Code_Units                            60000
+Omega_Matter                                      0.272
+Omega_Lambda                                      0.728
+Omega_Baryon                                      0.048
+Hubble_Param_Little_h                             0.68
+Softening_Type0                                   0.001
+Softening_Type0_MaxPhysLimit                      0.0001
+Softening_Type1                                   0.33
+Softening_Type1_MaxPhysLimit                      0.033
+Softening_Type2                                   1
+Softening_Type2_MaxPhysLimit                      0.1
+Softening_Type3                                   2
+Softening_Type3_MaxPhysLimit                      0.2
+Softening_Type4                                   0.033
+Softening_Type4_MaxPhysLimit                      0.0033
+Softening_Type5                                   0.016
+Softening_Type5_MaxPhysLimit                      0.0016
+UnitLength_in_cm                                  3.08568e+21
+UnitMass_in_g                                     1.989e+43
+UnitVelocity_in_cm_per_s                          100000
+UnitMagneticField_in_gauss                        1
+Minimum_Gas_Temperature                           10
+B_initial_x                                       1e-10
+B_initial_y                                       1e-10
+B_initial_z                                       1e-10
+
+Tag BufferSize (MPI_Buffersize_in_MB) not set in parameter file: defaulting to 100MB MPI Buffer allocation (adjust if needed for your machine) (=100) 
+Tag SnapshotFileBase (Snapshot_Filename_Base) not set in parameter file: defaulting to value = 'snapshot' 
+Tag RestartFile (Restart_Filename_Base) not set in parameter file: defaulting to value = 'restart' 
+Tag OmegaRadiation (Omega_Radiation) not set in parameter file: defaulting to ignore radiation in expansion (Omega_r = 0) 
+Tag CpuTimeBetRestartFile (Walltime_in_Seconds_Between_Restartfiles) not set in parameter file: defaulting to write restart checkpoints just under every hour (=3450) 
+Tag TreeDomainUpdateFrequency (TreeRebuild_ActiveFraction) not set in parameter file: defaulting to guess that we should re-build whenever 0.5 percent of the system is active. But this should be adjusted manually for performance and accuracy in most cases (=0.005) 
+Tag InitMetallicity (Initial_Metallicity) not set in parameter file: defaulting to zero (Z=0) 
+Tag InitStellarAge (Initial_StellarAge_inICs) not set in parameter file: defaulting to very old pre-existing stars [if any exist, otherwise this is irrelevant] (=10 Gyr) 
+Tag SNeIIEnergyFrac (SNe_Energy_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag GasReturnFraction (StellarMassLoss_Rate_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag GasReturnEnergy (StellarMassLoss_Energy_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag WindMomentumLoading (RP_Local_Momentum_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag HIIRegion_fLum_Coupled (-) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag AgeTracerEventsPerTimeBin (AgeTracerActiveTimestepFraction) not set in parameter file: defaulting to aim for ~10 age-tracer deposition events per timebin (=10) 
+Tag AgeTracerBinStart (-) not set in parameter file: left-edge of first age-tracer bin is early in stellar evolution (=1 Myr) 
+Tag AgeTracerBinEnd (-) not set in parameter file: right-edge of last age-tracer bin is at ~t_Hubble (=14000 Myr) 
+Tag PhotonMomentum_Coupled_Fraction (-) not set in parameter file: defaulting to use the explicitly-resolved absorption (=1) 
+Tag PhotonMomentum_fUV (PhotonMomentum_min_fUV_in_SED) not set in parameter file: defaulting to use the explicitly-resolved absorption (=0) 
+Tag PhotonMomentum_fOPT (PhotonMomentum_min_fOPT_in_SED) not set in parameter file: defaulting to use the explicitly-resolved absorption (=0) 
+Tag MinGasHsmlFractional (Minimum_Gas_KernelSize_RelativetoSoftening) not set in parameter file: defaulting to assume minimum matches the specified force softening (=1) 
+Tag MaxHsml (Maximum_KernelSize_CodeUnits) not set in parameter file: defaulting to assume no maximum (=1e+56) 
+Tag MinSizeTimestep (Minimum_Timestep_Allowed) not set in parameter file: defaulting to minimum allowed by memory table-size (=0) 
+Tag SnapFormat (Snapshot_Format) not set in parameter file: defaulting to standard hdf5 snapshot format (=3) 
+Tag NumFilesPerSnapshot (Number_of_Files_per_Snapshot) not set in parameter file: defaulting to single-file snapshots (=1) 
+Tag NumFilesWrittenInParallel (Number_of_Files_Written_in_Parallel) not set in parameter file: defaulting to only main-task writes (=1) 
+Tag GravityConstantInternal (GravityConstant_inCodeUnits) not set in parameter file: defaulting to calculating in terms of other specified units if needed (=0) 
+Tag InitGasTemp (Initial_Gas_Temperature) not set in parameter file: defaulting to assume temperatures defined in ICs (=0) 
+Tag CritPhysDensity (-) not set in parameter file: using FIRE-1/2 default of 100/cm3 (=100) 
+Tag SfEffPerFreeFall (-) not set in parameter file: defaulting to FIRE-default of unity (=1) 
+Tag TurbDiffusionCoefficient (-) not set in parameter file: code was compiled with turbulent diffusion, so will default to calculating the coefficients without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag ConductionCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski conductivity, so will default to calculating the physical coefficient without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag ShearViscosityCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski viscosity, so will default to calculating the physical coefficient without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag BulkViscosityCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski viscosity, so will default to 0 bulk viscosity as defined by those physics (=0) 
+
+found 601 times in output-list.
+
+Code units to be used: make sure you check these are correct! 
+  Hubble H0 (internal units) = 0.1 
+  Gravity G (internal units) = 43007.1 
+  unit Mass in g             = 2.925e+43 
+  unit Length in cm          = 4.53776e+21 
+  unit Time in s             = 4.53776e+16 
+  unit Velocity in cm/s      = 100000 
+  unit Energy in erg         = 2.925e+53 
+  unit Density in g/cm^3     = 3.1304e-22 
+  unit Pressure in erg/cm^3  = 3.1304e-12 
+  unit Luminosity in erg/s   = 6.4459e+36 
+  unit Flux in erg/s/cm^2    = 3.1304e-07 
+  unit B[internal] in gauss  = 6.27198e-06 
+
+
+The chosen interaction and softening kernel function is =3 
+  Gravity will be exactly Newtonian beyond =2.8 times the given Plummer-equivalent softenings 
+
+Initializing cooling ...
+ ..read ionization table [TREECOOL] with 0 non-zero UVB entries in file `TREECOOL'. Make sure to cite the authors from which the UV background was compiled! (See user guide for the correct references).
+ ..opening Cooling Table ./spcool_tables/spcool_48 
+ ..opening (z+) Cooling Table ./spcool_tables/spcool_48 
+ ..opening Cooling Table ./spcool_tables/spcool_28 
+ ..opening (z+) Cooling Table ./spcool_tables/spcool_29 
+Initializing Ewald correction...
+ ..initialization of periodic boundaries finished.
+Allocated 7.02734 MByte for rhogrid.
+Allocated 104.203 MByte for FFT kernel(s) and rhogrid.
+
+Task=1: Not enough memory in mymalloc_fullinfo() to allocate 5869.69 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3774.51 MB).
+ENDRUN issued on task=1, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+Task=2: Not enough memory in mymalloc_fullinfo() to allocate 5869.69 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3774.51 MB).
+ENDRUN issued on task=2, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+Task=3: Not enough memory in mymalloc_fullinfo() to allocate 5869.69 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3774.51 MB).
+ENDRUN issued on task=3, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+scontrol show job 13700055
+JobId=13700055 JobName=rerun_gizmo
+   UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
+   Priority=2053649 Nice=0 Account=rrg-rbond-ac QOS=normal
+   JobState=COMPLETING Reason=NonZeroExitCode Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=141:0
+   RunTime=00:00:10 TimeLimit=00:16:00 TimeMin=N/A
+   SubmitTime=2024-10-09T15:52:22 EligibleTime=2024-10-09T15:52:22
+   AccrueTime=2024-10-09T15:52:22
+   StartTime=2024-10-09T15:52:24 EndTime=2024-10-09T15:52:34 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-09T15:52:24 Scheduler=Main
+   Partition=compute AllocNode:Sid=nia-login03:263626
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[1503-1504]
+   BatchHost=nia1503
+   NumNodes=2 NumCPUs=160 NumTasks=80 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=80,mem=350000M,node=2,billing=40
+   AllocTRES=cpu=160,mem=350000M,node=2,billing=80
+   Socks/Node=* NtasksPerN:B:S:C=40:0:*:* CoreSpec=*
+   MinCPUsNode=40 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/run_gizmo.sh
+   WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo
+   Comment=/opt/slurm/bin/sbatch --export=NONE run_gizmo.sh 
+   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_2.err
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_2.out
+   Power=
+   
+
+sacct -j 13700055
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+13700055     rerun_giz+ rrg-rbond+   00:00:10                        00:00.407  00:00.624     13:0 
+13700055.ba+      batch rrg-rbond+   00:00:10    149036K      1592K  00:00.407  00:00.624     13:0 
+13700055.ex+     extern rrg-rbond+   00:00:10                         00:00:00   00:00:00      0:0 
+13700055.0   hydra_bst+ rrg-rbond+   00:00:05                         00:00:00   00:00:00      0:0 

@@ -1,0 +1,309 @@
+
+scontrol show job 13699957
+JobId=13699957 JobName=debugjob-1-dtolgay
+   UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
+   Priority=12055436 Nice=0 Account=rrg-rbond-ac QOS=normal
+   JobState=COMPLETING Reason=NonZeroExitCode Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=127:0
+   RunTime=00:58:28 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2024-10-09T14:45:12 EligibleTime=2024-10-09T14:45:12
+   AccrueTime=2024-10-09T14:45:12
+   StartTime=2024-10-09T14:45:15 EndTime=2024-10-09T15:43:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-09T14:45:15 Scheduler=Main
+   Partition=debug AllocNode:Sid=nia-login03:126096
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia0002
+   BatchHost=nia0002
+   NumNodes=1 NumCPUs=80 NumTasks=40 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=40,mem=175000M,node=1,billing=20
+   AllocTRES=cpu=80,mem=175000M,node=1,billing=40
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/bin/sh
+   WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE
+   Comment=/opt/slurm/bin/salloc --time=1:0:0 --job-name=debugjob-1-dtolgay --nodes=1 --ntasks=40 -p debug --x11 --exclusive 
+   Power=
+   
+
+sacct -j 13699957
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+13699957     debugjob-+ rrg-rbond+   00:58:29                        06:33.589   01:58:44      0:0 
+13699957.in+ interacti+ rrg-rbond+   00:58:29                         00:00:00   00:00:00      0:0 
+13699957.ex+     extern rrg-rbond+   00:58:29                         00:00:00   00:00:00      0:0 
+13699957.0   hydra_bst+ rrg-rbond+   00:00:02    284336K      1652K  00:04.856  00:26.416      0:0 
+13699957.1   hydra_bst+ rrg-rbond+   00:01:30 225418677+ 129759612K  01:50.236   01:10:58      0:0 
+13699957.2   hydra_bst+ rrg-rbond+   00:01:37 179379738+ 175260096K  04:38.497  47:19.301      0:0 
+
+kernel messages produced during job executions:
+[Oct 9 13:54] GIZMO invoked oom-killer: gfp_mask=0x280da, order=0, oom_score_adj=0
+[  +0.009008] GIZMO cpuset=/ mems_allowed=0-1
+[  +0.005288] CPU: 19 PID: 278496 Comm: GIZMO Tainted: G           OE  ------------   3.10.0-1160.119.2.el7.x86_64 #1
+[  +0.012211] Hardware name: Lenovo ThinkSystem SD530 -[7X21CTO1WW]-/-[7X21CTO1WW]-, BIOS -[TEE176H-3.20]- 11/03/2021
+[  +0.012223] Call Trace:
+[  +0.003329]  [<ffffffff9cbb1c6c>] dump_stack+0x19/0x1f
+[  +0.006329]  [<ffffffff9cbacbcf>] dump_header+0x90/0x22d
+[  +0.006524]  [<ffffffff9c50d512>] ? ktime_get_ts64+0x52/0xf0
+[  +0.006917]  [<ffffffff9c56697f>] ? delayacct_end+0x8f/0xc0
+[  +0.006827]  [<ffffffff9c5cd3f5>] oom_kill_process+0x2d5/0x4a0
+[  +0.007114]  [<ffffffff9c5ccdbd>] ? oom_unkillable_task+0xcd/0x120
+[  +0.007492]  [<ffffffff9c5cdafa>] out_of_memory+0x31a/0x500
+[  +0.006828]  [<ffffffff9c5d4904>] __alloc_pages_nodemask+0xae4/0xbf0
+[  +0.007710]  [<ffffffff9c629419>] alloc_pages_vma+0xa9/0x210
+[  +0.006935]  [<ffffffff9c60233f>] handle_mm_fault+0xb9f/0x1190
+[  +0.007135]  [<ffffffff9cbbf7d3>] __do_page_fault+0x213/0x510
+[  +0.007038]  [<ffffffff9cbbfb05>] do_page_fault+0x35/0x90
+[  +0.006653]  [<ffffffff9cbbb7b8>] page_fault+0x28/0x30
+[  +0.006361] Mem-Info:
+[  +0.003175] active_anon:45307880 inactive_anon:317589 isolated_anon:0
+ active_file:0 inactive_file:0 isolated_file:0
+ unevictable:2097152 dirty:0 writeback:0 unstable:0
+ slab_reclaimable:34288 slab_unreclaimable:126448
+ mapped:644594 shmem:955903 pagetables:119415 bounce:0
+ free:120164 free_pcp:0 free_cma:0
+[  +0.042015] Node 0 DMA free:15904kB min:4kB low:4kB high:4kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15996kB managed:15904kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:0kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.048152] lowmem_reserve[]: 0 2662 96339 96339
+[  +0.005977] Node 0 DMA32 free:375940kB min:1240kB low:1548kB high:1860kB active_anon:2350596kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:2793168kB managed:2726716kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:36kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.050729] lowmem_reserve[]: 0 0 93676 93676
+[  +0.005781] Node 0 Normal free:43708kB min:43716kB low:54644kB high:65572kB active_anon:87582584kB inactive_anon:646804kB active_file:0kB inactive_file:0kB unevictable:4194304kB isolated(anon):0kB isolated(file):0kB present:97517568kB managed:95925184kB mlocked:4194304kB dirty:0kB writeback:0kB mapped:1282860kB shmem:1450312kB slab_reclaimable:66060kB slab_unreclaimable:258480kB kernel_stack:17760kB pagetables:237828kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.056874] lowmem_reserve[]: 0 0 0 0
+[  +0.005089] Node 1 Normal free:45104kB min:45140kB low:56424kB high:67708kB active_anon:91298340kB inactive_anon:623552kB active_file:0kB inactive_file:0kB unevictable:4194304kB isolated(anon):0kB isolated(file):0kB present:100663296kB managed:99050336kB mlocked:4194304kB dirty:0kB writeback:0kB mapped:1295516kB shmem:2373300kB slab_reclaimable:71092kB slab_unreclaimable:247312kB kernel_stack:16448kB pagetables:239796kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.057359] lowmem_reserve[]: 0 0 0 0
+[  +0.005122] Node 0 DMA: 0*4kB 0*8kB 0*16kB 1*32kB (U) 2*64kB (U) 1*128kB (U) 1*256kB (U) 0*512kB 1*1024kB (U) 1*2048kB (M) 3*4096kB (M) = 15904kB
+[  +0.016607] Node 0 DMA32: 31*4kB (UM) 29*8kB (UM) 26*16kB (UM) 154*32kB (UM) 137*64kB (UM) 134*128kB (UEM) 135*256kB (UEM) 93*512kB (UEM) 98*1024kB (EM) 29*2048kB (M) 25*4096kB (M) = 375940kB
+[  +0.021141] Node 0 Normal: 1548*4kB (UM) 95*8kB (UE) 287*16kB (UEM) 665*32kB (UEM) 134*64kB (UM) 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 41400kB
+[  +0.017834] Node 1 Normal: 1644*4kB (UE) 227*8kB (UEM) 99*16kB (UEM) 183*32kB (UEM) 98*64kB (UEM) 156*128kB (UEM) 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 42072kB
+[  +0.018793] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  +0.010791] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  +0.010492] Node 1 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  +0.010777] Node 1 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  +0.010480] 955911 total pagecache pages
+[  +0.005444] 0 pages in swap cache
+[  +0.004757] Swap cache stats: add 0, delete 0, find 0/0
+[  +0.006897] Free swap  = 0kB
+[  +0.004285] Total swap = 0kB
+[  +0.004276] 50247507 pages RAM
+[  +0.004468] 0 pages HighMem/MovableOnly
+[  +0.005339] 817972 pages reserved
+[  +0.004743] [ pid ]   uid  tgid total_vm      rss nr_ptes swapents oom_score_adj name
+[  +0.009838] [ 1286]     0  1286    14464     5176      34        0             0 systemd-journal
+[  +0.010867] [ 1322]     0  1322    11623      738      24        0         -1000 systemd-udevd
+[  +0.010672] [ 1519]    32  1519    17314      355      38        0             0 rpcbind
+[  +0.010089] [ 1533]     0  1533     6596      437      19        0             0 systemd-logind
+[  +0.010771] [ 1534]     0  1534    22879      297      33        0             0 gssproxy
+[  +0.010169] [ 1544]     0  1544     5534      464      16        0             0 irqbalance
+[  +0.010353] [ 1547]    81  1547    19894      594      38        0          -900 dbus-daemon
+[  +0.010428] [ 1854]     0  1854     1629      204       9        0             0 agetty
+[  +0.009927] [ 1858]     0  1858    27551      215      10        0             0 agetty
+[  +0.009910] [ 2185]     0  2185    25752      709      47        0             0 dhclient
+[  +0.010096] [ 4154]    38  4154     6954      511      19        0             0 ntpd
+[  +0.009697] [ 4537]     0  4537     2712      410      10        0             0 mmccrmonitor
+[  +0.010446] [ 8437]     0  8437     5072     2804      14        0         -1000 runmmfs
+[  +0.009950] [ 8758]     0  8758   684931    24763     182        0             0 mmsysmon.py
+[  +0.010323] [13978]     0 13978 13146063  2857687    6413        0         -1000 mmfsd
+[  +0.009727] [21908]     0 21908    38464     1302      80        0             0 sssd
+[  +0.009619] [21909]     0 21909    59310     6584     119        0             0 sssd_be
+[  +0.009890] [21910]     0 21910    45086     8518      92        0             0 sssd_nss
+[  +0.009969] [21911]     0 21911    39406     1335      81        0             0 sssd_pam
+[  +0.009956] [21951]    29 21951    10610      411      25        0             0 rpc.statd
+[  +0.010047] [21952]     0 21952   166202     1039      66        0             0 automount
+[  +0.010020] [21976]     0 21976    28250     1074      57        0         -1000 sshd
+[  +0.009538] [22065]   997 22065    55937      516      21        0             0 munged
+[  +0.009706] [22084]     0 22084   874689     3266     135        0             0 slurmd
+[  +0.009700] [22162]     0 22162    57647      367      41        0             0 sharpd
+[  +0.009679] [22193]     0 22193    72502     3721      58        0             0 rsyslogd
+[  +0.009856] [39675]     0 39675   335000     4884      51        0             0 utils
+[  +0.009581] [276966]     0 276966    70890     1015      49        0         -1000 slurmstepd
+[  +0.010226] [276974]     0 276974     1091       89       7        0             0 sleep
+[  +0.009727] [276980]     0 276980    71035      930      51        0         -1000 slurmstepd
+[  +0.010194] [276987] 3114638 276987    31625      611      18        0             0 bash
+[  +0.009794] [278382] 3114638 278382    28359      388      13        0             0 mpirun
+[  +0.009969] [278387] 3114638 278387     4233      339      12        0             0 mpiexec.hydra
+[  +0.010636] [278388] 3114638 278388    80972     1650      40        0             0 srun
+[  +0.009740] [278389] 3114638 278389    12554      199      29        0             0 srun
+[  +0.009729] [278399]     0 278399    87468      962      51        0         -1000 slurmstepd
+[  +0.010124] [278406] 3114638 278406     4208      331      13        0             0 hydra_pmi_proxy
+[  +0.010813] [278472] 3114638 278472 11274398   938420    2286        0             0 GIZMO
+[  +0.009848] [278473] 3114638 278473 11271096   924250    2271        0             0 GIZMO
+[  +0.009852] [278474] 3114638 278474 11270583   927544    2282        0             0 GIZMO
+[  +0.009837] [278475] 3114638 278475 11270584   926001    2279        0             0 GIZMO
+[  +0.009833] [278476] 3114638 278476 11270585   928495    2286        0             0 GIZMO
+[  +0.009826] [278477] 3114638 278477 11270583   926748    2280        0             0 GIZMO
+[  +0.009824] [278478] 3114638 278478 11270072   925371    2279        0             0 GIZMO
+[  +0.009822] [278479] 3114638 278479 11270071   926921    2282        0             0 GIZMO
+[  +0.009812] [278480] 3114638 278480 11271096   925953    2278        0             0 GIZMO
+[  +0.009819] [278481] 3114638 278481 11271096   927442    2281        0             0 GIZMO
+[  +0.009807] [278482] 3114638 278482 11270584   932483    2292        0             0 GIZMO
+[  +0.009796] [278483] 3114638 278483 11270583   933294    2292        0             0 GIZMO
+[  +0.009795] [278484] 3114638 278484 11274925   899524    2209        0             0 GIZMO
+[  +0.009788] [278485] 3114638 278485 11270584   882140    2197        0             0 GIZMO
+[  +0.009784] [278486] 3114638 278486 11270584   883640    2199        0             0 GIZMO
+[  +0.009781] [278487] 3114638 278487 11270583   883505    2196        0             0 GIZMO
+[  +0.009780] [278488] 3114638 278488 11271095   883597    2200        0             0 GIZMO
+[  +0.009774] [278489] 3114638 278489 11270583   883143    2201        0             0 GIZMO
+[  +0.009770] [278490] 3114638 278490 11270584   884121    2204        0             0 GIZMO
+[  +0.009759] [278491] 3114638 278491 11270073   884347    2199        0             0 GIZMO
+[  +0.009768] [278492] 3114638 278492 11270584   884201    2204        0             0 GIZMO
+[  +0.009767] [278493] 3114638 278493 11270584   884377    2201        0             0 GIZMO
+[  +0.009756] [278494] 3114638 278494 11271095   883040    2199        0             0 GIZMO
+[  +0.009756] [278495] 3114638 278495 11270583   883892    2202        0             0 GIZMO
+[  +0.009752] [278496] 3114638 278496 11270072   883671    2202        0             0 GIZMO
+[  +0.009749] [278497] 3114638 278497 11275051   956670    2328        0             0 GIZMO
+[  +0.009741] [278498] 3114638 278498 11271148   945732    2320        0             0 GIZMO
+[  +0.009735] [278499] 3114638 278499 11270636   946682    2317        0             0 GIZMO
+[  +0.009737] [278500] 3114638 278500 11270124   945051    2314        0             0 GIZMO
+[  +0.009734] [278501] 3114638 278501 11270125   947329    2321        0             0 GIZMO
+[  +0.009742] [278502] 3114638 278502 11270126   945813    2316        0             0 GIZMO
+[  +0.009725] [278503] 3114638 278503 11270637   945908    2317        0             0 GIZMO
+[  +0.009728] [278504] 3114638 278504 11271148   945158    2318        0             0 GIZMO
+[  +0.009724] [278505] 3114638 278505 11271150   945045    2315        0             0 GIZMO
+[  +0.009720] [278506] 3114638 278506 11270638   946260    2318        0             0 GIZMO
+[  +0.009718] [278507] 3114638 278507 11271149   957585    2341        0             0 GIZMO
+[  +0.009716] [278508] 3114638 278508 11270636   957761    2340        0             0 GIZMO
+[  +0.009711] [278509] 3114638 278509 11275362   855439    2119        0             0 GIZMO
+[  +0.009704] [278510] 3114638 278510 11270637   840848    2113        0             0 GIZMO
+[  +0.009703] [278511] 3114638 278511 11270125   841491    2114        0             0 GIZMO
+[  +0.009697] [278512] 3114638 278512 11270636   843235    2117        0             0 GIZMO
+[  +0.009690] [278513] 3114638 278513 11270124   841581    2114        0             0 GIZMO
+[  +0.009687] [278514] 3114638 278514 11270124   842582    2113        0             0 GIZMO
+[  +0.009684] [278515] 3114638 278515 11270125   842151    2116        0             0 GIZMO
+[  +0.009669] [278516] 3114638 278516 11271148   843231    2115        0             0 GIZMO
+[  +0.009678] [278517] 3114638 278517 11270636   842624    2118        0             0 GIZMO
+[  +0.009673] [278518] 3114638 278518 11270132   841983    2114        0             0 GIZMO
+[  +0.009660] [278519] 3114638 278519 11270123   841965    2116        0             0 GIZMO
+[  +0.009659] [278520] 3114638 278520 11271837   841486    2115        0             0 GIZMO
+[  +0.009656] [278521] 3114638 278521 11270214   841804    2112        0             0 GIZMO
+[  +0.009662] [279895]     0 279895     2712      189      10        0             0 mmccrmonitor
+[  +0.010150] Out of memory: Kill process 278508 (GIZMO) score 19 or sacrifice child
+[  +0.008910] Killed process 278508 (GIZMO), UID 3114638, total-vm:45082544kB, anon-rss:3779044kB, file-rss:8200kB, shmem-rss:43800kB
+[Oct 9 14:12] GIZMO invoked oom-killer: gfp_mask=0x280da, order=0, oom_score_adj=0
+[  +0.009020] GIZMO cpuset=/ mems_allowed=0-1
+[  +0.005336] CPU: 66 PID: 283585 Comm: GIZMO Tainted: G           OE  ------------   3.10.0-1160.119.2.el7.x86_64 #1
+[  +0.012217] Hardware name: Lenovo ThinkSystem SD530 -[7X21CTO1WW]-/-[7X21CTO1WW]-, BIOS -[TEE176H-3.20]- 11/03/2021
+[  +0.012216] Call Trace:
+[  +0.003313]  [<ffffffff9cbb1c6c>] dump_stack+0x19/0x1f
+[  +0.006322]  [<ffffffff9cbacbcf>] dump_header+0x90/0x22d
+[  +0.006516]  [<ffffffff9c50d512>] ? ktime_get_ts64+0x52/0xf0
+[  +0.006912]  [<ffffffff9c56697f>] ? delayacct_end+0x8f/0xc0
+[  +0.006817]  [<ffffffff9c5cd3f5>] oom_kill_process+0x2d5/0x4a0
+[  +0.007106]  [<ffffffff9c5ccdbd>] ? oom_unkillable_task+0xcd/0x120
+[  +0.007494]  [<ffffffff9c5cdafa>] out_of_memory+0x31a/0x500
+[  +0.006815]  [<ffffffff9c5d4904>] __alloc_pages_nodemask+0xae4/0xbf0
+[  +0.007690]  [<ffffffff9c629419>] alloc_pages_vma+0xa9/0x210
+[  +0.006930]  [<ffffffff9c60233f>] handle_mm_fault+0xb9f/0x1190
+[  +0.007126]  [<ffffffff9cbbf7d3>] __do_page_fault+0x213/0x510
+[  +0.007024]  [<ffffffff9cbbfb05>] do_page_fault+0x35/0x90
+[  +0.006641]  [<ffffffff9cbbb7b8>] page_fault+0x28/0x30
+[  +0.006351] Mem-Info:
+[  +0.003168] active_anon:45368254 inactive_anon:279926 isolated_anon:0
+ active_file:0 inactive_file:0 isolated_file:0
+ unevictable:2097152 dirty:0 writeback:0 unstable:0
+ slab_reclaimable:34318 slab_unreclaimable:126249
+ mapped:607119 shmem:918263 pagetables:111578 bounce:0
+ free:120125 free_pcp:0 free_cma:0
+[  +0.041959] Node 0 DMA free:15904kB min:4kB low:4kB high:4kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15996kB managed:15904kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:0kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.048118] lowmem_reserve[]: 0 2662 96339 96339
+[  +0.005975] Node 0 DMA32 free:375944kB min:1240kB low:1548kB high:1860kB active_anon:2350620kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:2793168kB managed:2726716kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:12kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.050691] lowmem_reserve[]: 0 0 93676 93676
+[  +0.005756] Node 0 Normal free:43556kB min:43716kB low:54644kB high:65572kB active_anon:87688860kB inactive_anon:576004kB active_file:0kB inactive_file:0kB unevictable:4194304kB isolated(anon):0kB isolated(file):0kB present:97517568kB managed:95925184kB mlocked:4194304kB dirty:0kB writeback:0kB mapped:1212840kB shmem:1379548kB slab_reclaimable:65124kB slab_unreclaimable:258180kB kernel_stack:17856kB pagetables:221940kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.056861] lowmem_reserve[]: 0 0 0 0
+[  +0.005097] Node 1 Normal free:45096kB min:45140kB low:56424kB high:67708kB active_anon:91433536kB inactive_anon:543700kB active_file:0kB inactive_file:0kB unevictable:4194304kB isolated(anon):0kB isolated(file):0kB present:100663296kB managed:99050336kB mlocked:4194304kB dirty:0kB writeback:0kB mapped:1215636kB shmem:2293504kB slab_reclaimable:72148kB slab_unreclaimable:246816kB kernel_stack:16832kB pagetables:224360kB unstable:0kB bounce:0kB free_pcp:92kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+[  +0.057470] lowmem_reserve[]: 0 0 0 0
+[  +0.005125] Node 0 DMA: 0*4kB 0*8kB 0*16kB 1*32kB (U) 2*64kB (U) 1*128kB (U) 1*256kB (U) 0*512kB 1*1024kB (U) 1*2048kB (M) 3*4096kB (M) = 15904kB
+[  +0.016593] Node 0 DMA32: 22*4kB (UM) 28*8kB (UM) 53*16kB (UM) 88*32kB (UM) 90*64kB (UM) 89*128kB (UEM) 88*256kB (UEM) 71*512kB (UEM) 67*1024kB (EM) 29*2048kB (M) 41*4096kB (M) = 375944kB
+[  +0.020787] Node 0 Normal: 891*4kB (UM) 193*8kB (UEM) 167*16kB (UEM) 178*32kB (UEM) 74*64kB (UEM) 108*128kB (UEM) 45*256kB (UM) 0*512kB 0*1024kB 0*2048kB 0*4096kB = 43556kB
+[  +0.019298] Node 1 Normal: 872*4kB (UEM) 259*8kB (UEM) 150*16kB (UEM) 175*32kB (UEM) 109*64kB (UEM) 27*128kB (UEM) 82*256kB (UM) 0*512kB 0*1024kB 0*2048kB 0*4096kB = 44984kB
+[  +0.019475] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  +0.010781] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  +0.010485] Node 1 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  +0.010771] Node 1 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  +0.010471] 918272 total pagecache pages
+[  +0.005442] 0 pages in swap cache
+[  +0.004761] Swap cache stats: add 0, delete 0, find 0/0
+[  +0.006895] Free swap  = 0kB
+[  +0.004281] Total swap = 0kB
+[  +0.004279] 50247507 pages RAM
+[  +0.004468] 0 pages HighMem/MovableOnly
+[  +0.005341] 817972 pages reserved
+[  +0.004751] [ pid ]   uid  tgid total_vm      rss nr_ptes swapents oom_score_adj name
+[  +0.009828] [ 1286]     0  1286    14464     5216      34        0             0 systemd-journal
+[  +0.010865] [ 1322]     0  1322    11623      738      24        0         -1000 systemd-udevd
+[  +0.010673] [ 1519]    32  1519    17314      355      38        0             0 rpcbind
+[  +0.010089] [ 1533]     0  1533     6596      437      19        0             0 systemd-logind
+[  +0.010767] [ 1534]     0  1534    22879      297      33        0             0 gssproxy
+[  +0.010168] [ 1544]     0  1544     5535      464      16        0             0 irqbalance
+[  +0.010348] [ 1547]    81  1547    19894      594      38        0          -900 dbus-daemon
+[  +0.010423] [ 1854]     0  1854     1629      204       9        0             0 agetty
+[  +0.009925] [ 1858]     0  1858    27551      215      10        0             0 agetty
+[  +0.009915] [ 2185]     0  2185    25752      709      47        0             0 dhclient
+[  +0.010093] [ 4154]    38  4154     6954      511      19        0             0 ntpd
+[  +0.009687] [ 4537]     0  4537     2712      410      10        0             0 mmccrmonitor
+[  +0.010450] [ 8437]     0  8437     5072     2804      14        0         -1000 runmmfs
+[  +0.009939] [ 8758]     0  8758   684931    25219     182        0             0 mmsysmon.py
+[  +0.010325] [13978]     0 13978 13146063  2857693    6413        0         -1000 mmfsd
+[  +0.009733] [21908]     0 21908    38464     1302      80        0             0 sssd
+[  +0.009624] [21909]     0 21909    59310     6566     116        0             0 sssd_be
+[  +0.009881] [21910]     0 21910    45086     8523      92        0             0 sssd_nss
+[  +0.009973] [21911]     0 21911    39406     1335      81        0             0 sssd_pam
+[  +0.009951] [21951]    29 21951    10610      411      25        0             0 rpc.statd
+[  +0.010044] [21952]     0 21952   166202     1039      66        0             0 automount
+[  +0.010033] [21976]     0 21976    28250     1074      57        0         -1000 sshd
+[  +0.009532] [22065]   997 22065    55937      516      21        0             0 munged
+[  +0.009709] [22084]     0 22084   874689     3266     135        0             0 slurmd
+[  +0.009693] [22162]     0 22162    57647      367      41        0             0 sharpd
+[  +0.009673] [22193]     0 22193    72502     3743      58        0             0 rsyslogd
+[  +0.009867] [39675]     0 39675   335000     4914      51        0             0 utils
+[  +0.009575] [276966]     0 276966    70890     1015      49        0         -1000 slurmstepd
+[  +0.010226] [276974]     0 276974     1091       89       7        0             0 sleep
+[  +0.009731] [276980]     0 276980    71035      930      51        0         -1000 slurmstepd
+[  +0.010195] [276987] 3114638 276987    31625      611      18        0             0 bash
+[  +0.009800] [283469] 3114638 283469    28359      388      13        0             0 mpirun
+[  +0.009971] [283474] 3114638 283474     4233      340      13        0             0 mpiexec.hydra
+[  +0.010630] [283475] 3114638 283475    80972     1649      40        0             0 srun
+[  +0.009742] [283476] 3114638 283476    12554      198      29        0             0 srun
+[  +0.009727] [283485]     0 283485    87468      963      51        0         -1000 slurmstepd
+[  +0.010125] [283492] 3114638 283492     4208      331      14        0             0 hydra_pmi_proxy
+[  +0.010814] [283559] 3114638 283559 11211911  1125262    2577        0             0 GIZMO
+[  +0.009850] [283560] 3114638 283560 11213294  1119195    2576        0             0 GIZMO
+[  +0.009837] [283561] 3114638 283561 11208474  1114172    2568        0             0 GIZMO
+[  +0.009837] [283562] 3114638 283562 11211210  1118333    2577        0             0 GIZMO
+[  +0.009833] [283563] 3114638 283563 11207452  1114386    2568        0             0 GIZMO
+[  +0.009827] [283564] 3114638 283564 11210686  1117734    2576        0             0 GIZMO
+[  +0.009831] [283565] 3114638 283565 11207964  1114674    2570        0             0 GIZMO
+[  +0.009821] [283566] 3114638 283566 11212757  1118642    2577        0             0 GIZMO
+[  +0.009826] [283567] 3114638 283567 11207964  1114856    2571        0             0 GIZMO
+[  +0.009825] [283568] 3114638 283568 11211719  1118671    2581        0             0 GIZMO
+[  +0.009818] [283569] 3114638 283569 11211008  1148725    2631        0             0 GIZMO
+[  +0.009805] [283570] 3114638 283570 11211197  1142219    2625        0             0 GIZMO
+[  +0.009799] [283571] 3114638 283571 11207453  1141117    2627        0             0 GIZMO
+[  +0.009795] [283572] 3114638 283572 11212775  1142749    2625        0             0 GIZMO
+[  +0.009792] [283573] 3114638 283573 11207964  1137938    2618        0             0 GIZMO
+[  +0.009786] [283574] 3114638 283574 11211710  1141527    2623        0             0 GIZMO
+[  +0.009788] [283575] 3114638 283575 11211167  1141872    2626        0             0 GIZMO
+[  +0.009783] [283576] 3114638 283576 11211704  1145729    2632        0             0 GIZMO
+[  +0.009781] [283577] 3114638 283577 11212197  1143465    2630        0             0 GIZMO
+[  +0.009781] [283578] 3114638 283578 11210142  1141102    2621        0             0 GIZMO
+[  +0.009776] [283579] 3114638 283579 11215749  1147249    2630        0             0 GIZMO
+[  +0.009776] [283580] 3114638 283580 11210665  1138992    2619        0             0 GIZMO
+[  +0.009770] [283581] 3114638 283581 11210656  1143141    2627        0             0 GIZMO
+[  +0.009768] [283582] 3114638 283582 11211703  1145599    2633        0             0 GIZMO
+[  +0.009764] [283583] 3114638 283583 11211176  1140680    2625        0             0 GIZMO
+[  +0.009754] [283584] 3114638 283584 11210144  1139006    2617        0             0 GIZMO
+[  +0.009751] [283585] 3114638 283585 11211183  1141176    2624        0             0 GIZMO
+[  +0.009750] [283586] 3114638 283586 11211688  1140415    2622        0             0 GIZMO
+[  +0.009747] [283587] 3114638 283587 11213248  1145690    2631        0             0 GIZMO
+[  +0.009750] [283588] 3114638 283588 11211722  1140835    2621        0             0 GIZMO
+[  +0.009743] [283589] 3114638 283589 11214062  1102617    2535        0             0 GIZMO
+[  +0.009740] [283590] 3114638 283590 11212686  1093040    2530        0             0 GIZMO
+[  +0.009745] [283591] 3114638 283591 11212717  1093342    2534        0             0 GIZMO
+[  +0.009735] [283592] 3114638 283592 11211687  1091259    2527        0             0 GIZMO
+[  +0.009732] [283593] 3114638 283593 11212230  1091816    2527        0             0 GIZMO
+[  +0.009731] [283594] 3114638 283594 11210663  1091871    2528        0             0 GIZMO
+[  +0.009724] [283595] 3114638 283595 11211180  1091350    2527        0             0 GIZMO
+[  +0.009717] [283596] 3114638 283596 11211728  1093433    2529        0             0 GIZMO
+[  +0.009718] [283597] 3114638 283597 11210655  1090654    2526        0             0 GIZMO
+[  +0.009698] [283598] 3114638 283598 11210408  1091899    2524        0             0 GIZMO
+[  +0.009711] Out of memory: Kill process 283569 (GIZMO) score 23 or sacrifice child
+[  +0.008938] Killed process 283569 (GIZMO), UID 3114638, total-vm:44844032kB, anon-rss:4510876kB, file-rss:8260kB, shmem-rss:75764kB

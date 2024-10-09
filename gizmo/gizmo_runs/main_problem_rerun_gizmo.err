@@ -19202,3 +19202,9 @@ HDF5-DIAG: Error detected in HDF5 (1.8.21) MPI-process 600:
   #000: H5D.c line 413 in H5Dclose(): not a dataset
     major: Invalid arguments to routine
     minor: Inappropriate type
+slurmstepd: error: *** STEP 13692382.0 ON nia0116 CANCELLED AT 2024-10-08T04:32:30 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 13692382 ON nia0116 CANCELLED AT 2024-10-08T04:32:30 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 13692382.1 ON nia0468 CANCELLED AT 2024-10-08T04:32:30 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 13692382.4 ON nia0449 CANCELLED AT 2024-10-08T04:32:30 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 13692382.2 ON nia0325 CANCELLED AT 2024-10-08T04:32:30 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.

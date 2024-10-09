@@ -358,3 +358,47 @@ Increasing TopNodeAllocFactor=0.2423  ..new value=0.31499
  ..NTopleaves= 194209  NTopnodes=221953 (space for 288497)
 Balance: gravity work-load balance=1.06662   memory-balance=1.07376   hydro work-load balance=1.07033
  ..iter=0 exchange of 0146335175 particles (ret=0)
+
+scontrol show job 13692382
+JobId=13692382 JobName=rerun_gizmo
+   UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
+   Priority=2024298 Nice=0 Account=rrg-rbond-ac QOS=normal
+   JobState=TIMEOUT Reason=TimeLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=12:00:24 TimeLimit=12:00:00 TimeMin=N/A
+   SubmitTime=2024-10-07T16:31:01 EligibleTime=2024-10-07T16:31:01
+   AccrueTime=2024-10-07T16:31:01
+   StartTime=2024-10-07T16:32:06 EndTime=2024-10-08T04:32:30 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-07T16:32:06 Scheduler=Main
+   Partition=compute AllocNode:Sid=nia-login05:257271
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[0116,0170,0254,0325,0436,0449,0465,0468,0506-0507,0513,0580,0592-0593,0596,0645,0674,0734,0744,0830]
+   BatchHost=nia0116
+   NumNodes=20 NumCPUs=1600 NumTasks=800 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=800,mem=3500000M,node=20,billing=400
+   AllocTRES=cpu=1600,mem=3500000M,node=20,billing=800
+   Socks/Node=* NtasksPerN:B:S:C=40:0:*:* CoreSpec=*
+   MinCPUsNode=40 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/run_gizmo.sh
+   WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo
+   Comment=/opt/slurm/bin/sbatch --export=NONE run_gizmo.sh 
+   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo.err
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo.out
+   Power=
+   MailUser=dtolgay@scinet.local MailType=BEGIN
+   
+
+sacct -j 13692382
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+13692382     rerun_giz+ rrg-rbond+   12:00:24                        00:03.420  00:02.084      0:0 
+13692382.ba+      batch rrg-rbond+   12:00:26   1616456K     13872K  00:00.370  00:00.610     0:15 
+13692382.ex+     extern rrg-rbond+   12:00:24    148744K      1092K  00:00.014  00:00.004      0:0 
+13692382.0   hydra_bst+ rrg-rbond+   12:00:23 321349792K  26476204K  00:02.433  00:01.181     0:15 
+13692382.1   hydra_bst+ rrg-rbond+   12:00:22 320751024K  25508252K  00:00.135  00:00.073     0:15 
+13692382.2   hydra_bst+ rrg-rbond+   12:00:22 320597392K  24969160K  00:00.146  00:00.072     0:15 
+13692382.3   hydra_bst+ rrg-rbond+   12:00:22 320415936K  24747932K  00:00.146  00:00.070     0:15 
+13692382.4   hydra_bst+ rrg-rbond+   12:00:22 320755076K  25913340K  00:00.172  00:00.072     0:15 
