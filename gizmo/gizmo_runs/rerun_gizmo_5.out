@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------------------
-AvailMem:	 Largest =  173336.23 Mb (on task=40), Smallest =  173107.09 Mb (on task=0), Average =  173199.32 Mb
+AvailMem:	 Largest =  173327.54 Mb (on task=160), Smallest =  172587.93 Mb (on task=40), Average =  172912.66 Mb
 Total Mem:	 Largest =  193084.14 Mb (on task=0), Smallest =  193084.14 Mb (on task=0), Average =  193084.14 Mb
-Committed_AS:	 Largest =   19977.04 Mb (on task=0), Smallest =   19747.91 Mb (on task=40), Average =   19884.82 Mb
+Committed_AS:	 Largest =   20496.21 Mb (on task=40), Smallest =   19756.60 Mb (on task=160), Average =   20171.48 Mb
 SwapTotal:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
 SwapFree:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
-AllocMem:	 Largest =   19977.04 Mb (on task=0), Smallest =   19747.91 Mb (on task=40), Average =   19884.82 Mb
+AllocMem:	 Largest =   20496.21 Mb (on task=40), Smallest =   19756.60 Mb (on task=160), Average =   20171.48 Mb
 -------------------------------------------------------------------------------------------
 Task with the maximum commited memory
 
-System time: Thu Oct 10 14:08:15 2024
-This is GIZMO, version 2022, running on nia0093.scinet.local as dtolgay.
+System time: Thu Oct 10 14:36:53 2024
+This is GIZMO, version 2022, running on nia0255.scinet.local as dtolgay.
 Build on nia-login02.scinet.local by dtolgay from main:4c22c81 at https://github.com/dtolgay/niagara-rerun_fire.git, Oct 10 2024 14:06:04
 
 Code was compiled with settings:
@@ -22,7 +22,7 @@ Code was compiled with settings:
         FIRE_PHYSICS_DEFAULTS=2
         FIRE_MHD
 
-Running on 120 MPI tasks.
+Running on 200 MPI tasks.
 
 Size of particle structure       672  [bytes]
 Size of hydro-cell structure   944  [bytes]
@@ -129,78 +129,87 @@ Initializing cooling ...
  ..opening (z+) Cooling Table ./spcool_tables/spcool_29 
 Initializing Ewald correction...
  ..initialization of periodic boundaries finished.
-Allocated 5.01953 MByte for rhogrid.
-Allocated 72.1406 MByte for FFT kernel(s) and rhogrid.
+Allocated 3.01172 MByte for rhogrid.
+Allocated 48.0938 MByte for FFT kernel(s) and rhogrid.
 
-Task=1: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=1: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=1, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=2: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=2: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=2, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=3: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=3: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=3, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=4: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=4: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=4, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=5: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=5: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=5, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=6: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=6: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=6, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=7: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=7: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=7, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=8: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=8: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=8, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=9: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=9: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=9, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=10: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=10: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=10, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=11: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=11: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=11, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=12: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=12: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=12, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=13: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=13: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=13, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=14: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=14: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=14, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=15: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=15: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=15, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=16: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=16: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=16, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-Task=17: Not enough memory in mymalloc_fullinfo() to allocate 3913.12 MB for variable 'ParticleData_P' at allocate_memory()/system/allocate.c/line 55 (FreeBytes=3846.43 MB).
+Task=17: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
 ENDRUN issued on task=17, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
 
-scontrol show job 13706168
-JobId=13706168 JobName=rerun_gizmo
+Task=18: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
+ENDRUN issued on task=18, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+Task=19: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
+ENDRUN issued on task=19, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+Task=20: Not enough memory in mymalloc_fullinfo() to allocate 3298.2 MB for variable 'GasCellData_P' at allocate_memory()/system/allocate.c/line 69 (FreeBytes=1554.89 MB).
+ENDRUN issued on task=20, function 'mymalloc_fullinfo()', file 'system/mymalloc.c', line 169: error level 812
+
+scontrol show job 13706197
+JobId=13706197 JobName=rerun_gizmo
    UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
-   Priority=2078194 Nice=0 Account=rrg-rbond-ac QOS=normal
+   Priority=2078209 Nice=0 Account=rrg-rbond-ac QOS=normal
    JobState=COMPLETING Reason=NonZeroExitCode Dependency=(null)
    Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=44:0
-   RunTime=00:00:09 TimeLimit=00:16:00 TimeMin=N/A
-   SubmitTime=2024-10-10T14:07:55 EligibleTime=2024-10-10T14:07:55
-   AccrueTime=2024-10-10T14:07:55
-   StartTime=2024-10-10T14:08:07 EndTime=2024-10-10T14:08:16 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-10T14:08:07 Scheduler=Main
+   RunTime=00:00:06 TimeLimit=00:16:00 TimeMin=N/A
+   SubmitTime=2024-10-10T14:36:46 EligibleTime=2024-10-10T14:36:46
+   AccrueTime=2024-10-10T14:36:46
+   StartTime=2024-10-10T14:36:47 EndTime=2024-10-10T14:36:53 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-10T14:36:47 Scheduler=Main
    Partition=compute AllocNode:Sid=nia-login02:30550
    ReqNodeList=(null) ExcNodeList=(null)
-   NodeList=nia[0093-0095]
-   BatchHost=nia0093
-   NumNodes=3 NumCPUs=240 NumTasks=120 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-   ReqTRES=cpu=120,mem=525000M,node=3,billing=60
-   AllocTRES=cpu=240,mem=525000M,node=3,billing=120
+   NodeList=nia[0255-0257,0475-0476]
+   BatchHost=nia0255
+   NumNodes=5 NumCPUs=400 NumTasks=200 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=200,mem=875000M,node=5,billing=100
+   AllocTRES=cpu=400,mem=875000M,node=5,billing=200
    Socks/Node=* NtasksPerN:B:S:C=40:0:*:* CoreSpec=*
    MinCPUsNode=40 MinMemoryNode=175000M MinTmpDiskNode=0
    Features=[skylake|cascade] DelayBoot=00:00:00
@@ -208,16 +217,16 @@ JobId=13706168 JobName=rerun_gizmo
    Command=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/run_gizmo.sh
    WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo
    Comment=/opt/slurm/bin/sbatch --export=NONE run_gizmo.sh 
-   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_3.err
+   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_5.err
    StdIn=/dev/null
-   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_3.out
+   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_5.out
    Power=
    
 
-sacct -j 13706168
+sacct -j 13706197
 JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
-13706168     rerun_giz+ rrg-rbond+   00:00:09                         00:00:00   00:00:00      0:0 
-13706168.ba+      batch rrg-rbond+   00:00:09                         00:00:00   00:00:00      0:0 
-13706168.ex+     extern rrg-rbond+   00:00:09                         00:00:00   00:00:00      0:0 
-13706168.0   hydra_bst+ rrg-rbond+   00:00:03                         00:00:00   00:00:00      0:0 
+13706197     rerun_giz+ rrg-rbond+   00:00:06                        01:34.910  01:40.936     44:0 
+13706197.ba+      batch rrg-rbond+   00:00:06    149036K      1592K  00:00.415  00:00.634     44:0 
+13706197.ex+     extern rrg-rbond+   00:00:06    148744K       904K  00:00.003  00:00.001      0:0 
+13706197.0   hydra_bst+ rrg-rbond+   00:00:03    284332K      1644K  01:34.491  01:40.301      0:0 

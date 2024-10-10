@@ -1,0 +1,369 @@
+-------------------------------------------------------------------------------------------
+AvailMem:	 Largest =  172801.86 Mb (on task=200), Smallest =  172466.02 Mb (on task=80), Average =  172669.55 Mb
+Total Mem:	 Largest =  193084.14 Mb (on task=0), Smallest =  193084.14 Mb (on task=0), Average =  193084.14 Mb
+Committed_AS:	 Largest =   20618.12 Mb (on task=80), Smallest =   20282.27 Mb (on task=200), Average =   20414.59 Mb
+SwapTotal:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
+SwapFree:	 Largest =       0.00 Mb (on task=0), Smallest =       0.00 Mb (on task=0), Average =       0.00 Mb
+AllocMem:	 Largest =   20618.12 Mb (on task=80), Smallest =   20282.27 Mb (on task=200), Average =   20414.59 Mb
+-------------------------------------------------------------------------------------------
+Task with the maximum commited memory
+
+System time: Thu Oct 10 14:54:35 2024
+This is GIZMO, version 2022, running on nia0254.scinet.local as dtolgay.
+Build on nia-login02.scinet.local by dtolgay from main:4c22c81 at https://github.com/dtolgay/niagara-rerun_fire.git, Oct 10 2024 14:06:04
+
+Code was compiled with settings:
+
+        BOX_PERIODIC
+        IO_COMPRESS_HDF5
+        MULTIPLEDOMAINS=8
+        PMGRID=512
+        HYDRO_MESHLESS_FINITE_MASS
+        FIRE_PHYSICS_DEFAULTS=2
+        FIRE_MHD
+
+Running on 480 MPI tasks.
+
+Size of particle structure       672  [bytes]
+Size of hydro-cell structure   944  [bytes]
+
+Obtaining parameters from file './parameters.txt':
+Initial_Conditions_Format                         3
+Initial_Conditions_File                           /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120
+Initial_Simulation_Time                           0.25
+Final_Simulation_Time                             0.251603
+Output_Directory                                  /scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output
+Use_Tabulated_Snapshot_Times                      1
+Snapshot_Times_Table_Filename                     ./snapshot_scale-factors.txt
+Maximum_Timestep_Allowed                          0.005
+MaxSimulationWallTime_in_Seconds                  43200
+ParticleNumberMemoryImbalance_Limit               5
+Effective_Kernel_NeighborNumber                   32
+MaxMemSize                                        4000
+Cosmological_Simulation_On                        1
+Box_Size_In_Code_Units                            60000
+Omega_Matter                                      0.272
+Omega_Lambda                                      0.728
+Omega_Baryon                                      0.048
+Hubble_Param_Little_h                             0.68
+Softening_Type0                                   0.001
+Softening_Type0_MaxPhysLimit                      0.0001
+Softening_Type1                                   0.33
+Softening_Type1_MaxPhysLimit                      0.033
+Softening_Type2                                   1
+Softening_Type2_MaxPhysLimit                      0.1
+Softening_Type3                                   2
+Softening_Type3_MaxPhysLimit                      0.2
+Softening_Type4                                   0.033
+Softening_Type4_MaxPhysLimit                      0.0033
+Softening_Type5                                   0.016
+Softening_Type5_MaxPhysLimit                      0.0016
+UnitLength_in_cm                                  3.08568e+21
+UnitMass_in_g                                     1.989e+43
+UnitVelocity_in_cm_per_s                          100000
+UnitMagneticField_in_gauss                        1
+Minimum_Gas_Temperature                           10
+B_initial_x                                       1e-10
+B_initial_y                                       1e-10
+B_initial_z                                       1e-10
+
+Tag BufferSize (MPI_Buffersize_in_MB) not set in parameter file: defaulting to 100MB MPI Buffer allocation (adjust if needed for your machine) (=100) 
+Tag SnapshotFileBase (Snapshot_Filename_Base) not set in parameter file: defaulting to value = 'snapshot' 
+Tag RestartFile (Restart_Filename_Base) not set in parameter file: defaulting to value = 'restart' 
+Tag OmegaRadiation (Omega_Radiation) not set in parameter file: defaulting to ignore radiation in expansion (Omega_r = 0) 
+Tag CpuTimeBetRestartFile (Walltime_in_Seconds_Between_Restartfiles) not set in parameter file: defaulting to write restart checkpoints just under every hour (=3450) 
+Tag TreeDomainUpdateFrequency (TreeRebuild_ActiveFraction) not set in parameter file: defaulting to guess that we should re-build whenever 0.5 percent of the system is active. But this should be adjusted manually for performance and accuracy in most cases (=0.005) 
+Tag InitMetallicity (Initial_Metallicity) not set in parameter file: defaulting to zero (Z=0) 
+Tag InitStellarAge (Initial_StellarAge_inICs) not set in parameter file: defaulting to very old pre-existing stars [if any exist, otherwise this is irrelevant] (=10 Gyr) 
+Tag SNeIIEnergyFrac (SNe_Energy_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag GasReturnFraction (StellarMassLoss_Rate_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag GasReturnEnergy (StellarMassLoss_Energy_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag WindMomentumLoading (RP_Local_Momentum_Renormalization) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag HIIRegion_fLum_Coupled (-) not set in parameter file: defaulting to standard stellar-evolution-defaults (=1) 
+Tag AgeTracerEventsPerTimeBin (AgeTracerActiveTimestepFraction) not set in parameter file: defaulting to aim for ~10 age-tracer deposition events per timebin (=10) 
+Tag AgeTracerBinStart (-) not set in parameter file: left-edge of first age-tracer bin is early in stellar evolution (=1 Myr) 
+Tag AgeTracerBinEnd (-) not set in parameter file: right-edge of last age-tracer bin is at ~t_Hubble (=14000 Myr) 
+Tag PhotonMomentum_Coupled_Fraction (-) not set in parameter file: defaulting to use the explicitly-resolved absorption (=1) 
+Tag PhotonMomentum_fUV (PhotonMomentum_min_fUV_in_SED) not set in parameter file: defaulting to use the explicitly-resolved absorption (=0) 
+Tag PhotonMomentum_fOPT (PhotonMomentum_min_fOPT_in_SED) not set in parameter file: defaulting to use the explicitly-resolved absorption (=0) 
+Tag MinGasHsmlFractional (Minimum_Gas_KernelSize_RelativetoSoftening) not set in parameter file: defaulting to assume minimum matches the specified force softening (=1) 
+Tag MaxHsml (Maximum_KernelSize_CodeUnits) not set in parameter file: defaulting to assume no maximum (=1e+56) 
+Tag MinSizeTimestep (Minimum_Timestep_Allowed) not set in parameter file: defaulting to minimum allowed by memory table-size (=0) 
+Tag SnapFormat (Snapshot_Format) not set in parameter file: defaulting to standard hdf5 snapshot format (=3) 
+Tag NumFilesPerSnapshot (Number_of_Files_per_Snapshot) not set in parameter file: defaulting to single-file snapshots (=1) 
+Tag NumFilesWrittenInParallel (Number_of_Files_Written_in_Parallel) not set in parameter file: defaulting to only main-task writes (=1) 
+Tag GravityConstantInternal (GravityConstant_inCodeUnits) not set in parameter file: defaulting to calculating in terms of other specified units if needed (=0) 
+Tag InitGasTemp (Initial_Gas_Temperature) not set in parameter file: defaulting to assume temperatures defined in ICs (=0) 
+Tag CritPhysDensity (-) not set in parameter file: using FIRE-1/2 default of 100/cm3 (=100) 
+Tag SfEffPerFreeFall (-) not set in parameter file: defaulting to FIRE-default of unity (=1) 
+Tag TurbDiffusionCoefficient (-) not set in parameter file: code was compiled with turbulent diffusion, so will default to calculating the coefficients without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag ConductionCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski conductivity, so will default to calculating the physical coefficient without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag ShearViscosityCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski viscosity, so will default to calculating the physical coefficient without arbitrary re-normalization (i.e. user-specified additional coefficient/multipler=1) 
+Tag BulkViscosityCoeff (-) not set in parameter file: code was compiled with Spitzer-Braginski viscosity, so will default to 0 bulk viscosity as defined by those physics (=0) 
+
+found 601 times in output-list.
+
+Code units to be used: make sure you check these are correct! 
+  Hubble H0 (internal units) = 0.1 
+  Gravity G (internal units) = 43007.1 
+  unit Mass in g             = 2.925e+43 
+  unit Length in cm          = 4.53776e+21 
+  unit Time in s             = 4.53776e+16 
+  unit Velocity in cm/s      = 100000 
+  unit Energy in erg         = 2.925e+53 
+  unit Density in g/cm^3     = 3.1304e-22 
+  unit Pressure in erg/cm^3  = 3.1304e-12 
+  unit Luminosity in erg/s   = 6.4459e+36 
+  unit Flux in erg/s/cm^2    = 3.1304e-07 
+  unit B[internal] in gauss  = 6.27198e-06 
+
+
+The chosen interaction and softening kernel function is =3 
+  Gravity will be exactly Newtonian beyond =2.8 times the given Plummer-equivalent softenings 
+
+Initializing cooling ...
+ ..read ionization table [TREECOOL] with 0 non-zero UVB entries in file `TREECOOL'. Make sure to cite the authors from which the UV background was compiled! (See user guide for the correct references).
+ ..opening Cooling Table ./spcool_tables/spcool_48 
+ ..opening (z+) Cooling Table ./spcool_tables/spcool_48 
+ ..opening Cooling Table ./spcool_tables/spcool_28 
+ ..opening (z+) Cooling Table ./spcool_tables/spcool_29 
+Initializing Ewald correction...
+ ..initialization of periodic boundaries finished.
+Allocated 2.00781 MByte for rhogrid.
+Allocated 24.0469 MByte for FFT kernel(s) and rhogrid.
+Allocated 997.205 MByte for particle data storage.
+Allocated 1374.25 MByte for storage of hydro data.
+
+Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.0.hdf5' on task=0 (contains 36121293 particles.)
+ ..distributing this file to tasks 0-119
+Type 0 (gas):   17602868  (tot=     0070032348) masstab=0
+Type 1 (halo):  17525280  (tot=     0070514272) masstab=0
+Type 2 (alt):     873987  (tot=     0005513331) masstab=0
+Type 3 (pic):          0  (tot=     0000000000) masstab=0
+Type 4 (stars):   119158  (tot=     0000483237) masstab=0
+Type 5 (sink):         0  (tot=     0000000000) masstab=0
+
+reading block 0 (Coordinates)...
+reading block 1 (Velocities)...
+reading block 2 (ParticleIDs)...
+reading block 3 (ParticleChildIDsNumber)...
+reading block 4 (ParticleIDGenerationNumber)...
+reading block 5 (Masses)...
+reading block 6 (InternalEnergy)...
+reading block 7 (Density)...
+reading block 8 (ElectronAbundance)...
+reading block 9 (NeutralHydrogenAbundance)...
+reading block 10 (SmoothingLength)...
+reading block 11 (StarFormationRate)...
+reading block 12 (StellarFormationTime)...
+reading block 17 (Metallicity)...
+reading block 53 (MagneticField)...
+
+Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.1.hdf5' on task=120 (contains 37372188 particles.)
+ ..distributing this file to tasks 120-239
+Type 0 (gas):   17707820  (tot=     0070032348) masstab=0
+Type 1 (halo):  17931464  (tot=     0070514272) masstab=0
+Type 2 (alt):    1602839  (tot=     0005513331) masstab=0
+Type 3 (pic):          0  (tot=     0000000000) masstab=0
+Type 4 (stars):   130065  (tot=     0000483237) masstab=0
+Type 5 (sink):         0  (tot=     0000000000) masstab=0
+
+reading block 0 (Coordinates)...
+reading block 1 (Velocities)...
+reading block 2 (ParticleIDs)...
+reading block 3 (ParticleChildIDsNumber)...
+reading block 4 (ParticleIDGenerationNumber)...
+reading block 5 (Masses)...
+reading block 6 (InternalEnergy)...
+reading block 7 (Density)...
+reading block 8 (ElectronAbundance)...
+reading block 9 (NeutralHydrogenAbundance)...
+reading block 10 (SmoothingLength)...
+reading block 11 (StarFormationRate)...
+reading block 12 (StellarFormationTime)...
+reading block 17 (Metallicity)...
+reading block 53 (MagneticField)...
+
+Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.2.hdf5' on task=240 (contains 37791547 particles.)
+ ..distributing this file to tasks 240-359
+Type 0 (gas):   17627676  (tot=     0070032348) masstab=0
+Type 1 (halo):  17901417  (tot=     0070514272) masstab=0
+Type 2 (alt):    2142126  (tot=     0005513331) masstab=0
+Type 3 (pic):          0  (tot=     0000000000) masstab=0
+Type 4 (stars):   120328  (tot=     0000483237) masstab=0
+Type 5 (sink):         0  (tot=     0000000000) masstab=0
+
+reading block 0 (Coordinates)...
+reading block 1 (Velocities)...
+reading block 2 (ParticleIDs)...
+reading block 3 (ParticleChildIDsNumber)...
+reading block 4 (ParticleIDGenerationNumber)...
+reading block 5 (Masses)...
+reading block 6 (InternalEnergy)...
+reading block 7 (Density)...
+reading block 8 (ElectronAbundance)...
+reading block 9 (NeutralHydrogenAbundance)...
+reading block 10 (SmoothingLength)...
+reading block 11 (StarFormationRate)...
+reading block 12 (StellarFormationTime)...
+reading block 17 (Metallicity)...
+reading block 53 (MagneticField)...
+
+Reading file `/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/output/snapdir_120/snapshot_120.3.hdf5' on task=360 (contains 35258160 particles.)
+ ..distributing this file to tasks 360-479
+Type 0 (gas):   17093984  (tot=     0070032348) masstab=0
+Type 1 (halo):  17156111  (tot=     0070514272) masstab=0
+Type 2 (alt):     894379  (tot=     0005513331) masstab=0
+Type 3 (pic):          0  (tot=     0000000000) masstab=0
+Type 4 (stars):   113686  (tot=     0000483237) masstab=0
+Type 5 (sink):         0  (tot=     0000000000) masstab=0
+
+reading block 0 (Coordinates)...
+reading block 1 (Velocities)...
+reading block 2 (ParticleIDs)...
+reading block 3 (ParticleChildIDsNumber)...
+reading block 4 (ParticleIDGenerationNumber)...
+reading block 5 (Masses)...
+reading block 6 (InternalEnergy)...
+reading block 7 (Density)...
+reading block 8 (ElectronAbundance)...
+reading block 9 (NeutralHydrogenAbundance)...
+reading block 10 (SmoothingLength)...
+reading block 11 (StarFormationRate)...
+reading block 12 (StellarFormationTime)...
+reading block 17 (Metallicity)...
+reading block 53 (MagneticField)...
+Reading done. Total number of particles :  0146543188
+
+Domain decomposition building... LevelToTimeBin[TakeLevel=0]=0  (presently allocated=2398.24 MB)
+ ..allocated 0.821243 MByte for top-level domain structure
+ ..using 24.4324 MB of temporary storage for domain decomposition... (presently allocated=2423.5 MB)
+
+In 'DOMAIN', domain_Decomposition()/domain.c/208: Largest Allocation = 2423.5 Mbyte (on task=0), Smallest = 2419.65 Mbyte, Average = 2422.49 Mbyte
+------------------------ Allocated Memory Blocks----------------------------------------
+Task   Nr F          Variable      MBytes   Cumulative         Function/File/Linenumber
+----------------------------------------------------------------------------------------
+   0    0 0            BetaH0      0.0153       0.0153  InitCoolMemory()/cooling/cooling/1354
+   0    1 0           BetaHep      0.0153       0.0306  InitCoolMemory()/cooling/cooling/1355
+   0    2 0           AlphaHp      0.0153       0.0459  InitCoolMemory()/cooling/cooling/1356
+   0    3 0          AlphaHep      0.0153       0.0612  InitCoolMemory()/cooling/cooling/1357
+   0    4 0            Alphad      0.0153       0.0764  InitCoolMemory()/cooling/cooling/1358
+   0    5 0         AlphaHepp      0.0153       0.0917  InitCoolMemory()/cooling/cooling/1359
+   0    6 0          GammaeH0      0.0153       0.1070  InitCoolMemory()/cooling/cooling/1360
+   0    7 0         GammaeHe0      0.0153       0.1223  InitCoolMemory()/cooling/cooling/1361
+   0    8 0         GammaeHep      0.0153       0.1376  InitCoolMemory()/cooling/cooling/1362
+   0    9 0            Betaff      0.0153       0.1529  InitCoolMemory()/cooling/cooling/1363
+   0   10 0      SpCoolTable0      0.2753       0.4282  InitCoolMemory()/cooling/cooling/1367
+   0   11 0      SpCoolTable1      0.2753       0.7034  InitCoolMemory()/cooling/cooling/1368
+   0   12 0    slabs_per_task      0.0037       0.7071  pm_init_periodi()/gravity/pm_peri/172
+   0   13 0   first_slab_of_t      0.0037       0.7108  pm_init_periodi()/gravity/pm_peri/175
+   0   14 0           rhogrid      2.0078       2.7186  pm_init_periodi()/gravity/pm_peri/182
+   0   15 0    slabs_per_task      0.0037       2.7222  pm_init_nonperi()/gravity/pm_nonp/313
+   0   16 0   first_slab_of_t      0.0037       2.7259  pm_init_nonperi()/gravity/pm_nonp/316
+   0   17 0         kernel[1]     12.0234      14.7493  pm_init_nonperi()/gravity/pm_nonp/359
+   0   18 0           rhogrid     12.0234      26.7728  pm_init_nonperi()/gravity/pm_nonp/396
+   0   19 0        Exportflag      0.0018      26.7746  allocate_memory()/system/allocate/31
+   0   20 0       Exportindex      0.0018      26.7764  allocate_memory()/system/allocate/32
+   0   21 0   Exportnodecount      0.0018      26.7783  allocate_memory()/system/allocate/33
+   0   22 0        Send_count      0.0018      26.7801  allocate_memory()/system/allocate/35
+   0   23 0       Send_offset      0.0018      26.7819  allocate_memory()/system/allocate/36
+   0   24 0        Recv_count      0.0018      26.7838  allocate_memory()/system/allocate/37
+   0   25 0       Recv_offset      0.0018      26.7856  allocate_memory()/system/allocate/38
+   0   26 0     ProcessedFlag      1.4558      28.2414  allocate_memory()/system/allocate/40
+   0   27 0   NextActiveParti      5.8231      34.0645  allocate_memory()/system/allocate/43
+   0   28 0     NextInTimeBin      5.8231      39.8876  allocate_memory()/system/allocate/46
+   0   29 0     PrevInTimeBin      5.8231      45.7107  allocate_memory()/system/allocate/49
+   0   30 0    ParticleData_P    978.2803    1023.9911  allocate_memory()/system/allocate/55
+   0   31 0     GasCellData_P   1374.2509    2398.2420  allocate_memory()/system/allocate/69
+   0   32 0   DomainStartList      0.0146    2398.2567  domain_allocate()/domain.c/296
+   0   33 0     DomainEndList      0.0146    2398.2713  domain_allocate()/domain.c/299
+   0   34 0          TopNodes      0.7920    2399.0633  domain_allocate()/domain.c/302
+   0   35 0        domain_key     23.2924    2422.3557  domain_Decompos()/domain.c/155
+   0   36 0              toGo      0.0018    2422.3575  domain_Decompos()/domain.c/158
+   0   37 0           toGoGas      0.0018    2422.3593  domain_Decompos()/domain.c/160
+   0   38 0             toGet      0.0018    2422.3611  domain_Decompos()/domain.c/162
+   0   39 0          toGetGas      0.0018    2422.3630  domain_Decompos()/domain.c/164
+   0   40 0      list_NumPart      0.0018    2422.3648  domain_Decompos()/domain.c/166
+   0   41 0        list_N_gas      0.0018    2422.3666  domain_Decompos()/domain.c/168
+   0   42 0         list_load      0.0018    2422.3685  domain_Decompos()/domain.c/170
+   0   43 0      list_loadgas      0.0018    2422.3703  domain_Decompos()/domain.c/172
+   0   44 0         list_work      0.0037    2422.3740  domain_Decompos()/domain.c/174
+   0   45 0      list_workgas      0.0037    2422.3776  domain_Decompos()/domain.c/176
+   0   46 0        domainWork      0.0466    2422.4242  domain_Decompos()/domain.c/178
+   0   47 0     domainWorkGas      0.0466    2422.4708  domain_Decompos()/domain.c/180
+   0   48 0       domainCount      0.0466    2422.5174  domain_Decompos()/domain.c/182
+   0   49 0    domainCountGas      0.0466    2422.5640  domain_Decompos()/domain.c/184
+   0   50 0          topNodes      0.9317    2423.4957  domain_Decompos()/domain.c/197
+----------------------------------------------------------------------------------------
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.008  ..new value=0.0104
+ ..allocated 1.05885 MByte for top-level domain structure
+ ..using 24.7679 MB of temporary storage for domain decomposition... (presently allocated=2424.07 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.0104  ..new value=0.01352
+ ..allocated 1.36773 MByte for top-level domain structure
+ ..using 25.2039 MB of temporary storage for domain decomposition... (presently allocated=2424.81 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.01352  ..new value=0.017576
+ ..allocated 1.76922 MByte for top-level domain structure
+ ..using 25.7707 MB of temporary storage for domain decomposition... (presently allocated=2425.78 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.017576  ..new value=0.0228488
+ ..allocated 2.29119 MByte for top-level domain structure
+ ..using 26.5076 MB of temporary storage for domain decomposition... (presently allocated=2427.04 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.0228488  ..new value=0.0297034
+ ..allocated 2.96978 MByte for top-level domain structure
+ ..using 27.4656 MB of temporary storage for domain decomposition... (presently allocated=2428.68 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.0297034  ..new value=0.0386145
+ ..allocated 3.85187 MByte for top-level domain structure
+ ..using 28.7109 MB of temporary storage for domain decomposition... (presently allocated=2430.8 MB)
+Can't combine trees due to lack of storage. Will try again.
+Increasing TopNodeAllocFactor=0.0386145  ..new value=0.0501988
+ ..allocated 4.99861 MByte for top-level domain structure
+ ..using 30.3299 MB of temporary storage for domain decomposition... (presently allocated=2433.57 MB)
+ ..NTopNodes before=48225
+ ..NTopnodes after=66977
+ ..NTopleaves= 58605  NTopnodes=66977 (space for 76628)
+Balance: gravity work-load balance=1.11008   memory-balance=1.15427   hydro work-load balance=1.15034
+ ..iter=0 exchange of 0146277021 particles (ret=0)
+
+scontrol show job 13706295
+JobId=13706295 JobName=rerun_gizmo
+   UserId=dtolgay(3114638) GroupId=murray(6000029) MCS_label=N/A
+   Priority=2078358 Nice=0 Account=rrg-rbond-ac QOS=normal
+   JobState=TIMEOUT Reason=TimeLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:16:11 TimeLimit=00:16:00 TimeMin=N/A
+   SubmitTime=2024-10-10T14:46:36 EligibleTime=2024-10-10T14:46:36
+   AccrueTime=2024-10-10T14:46:36
+   StartTime=2024-10-10T14:54:29 EndTime=2024-10-10T15:10:40 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-10-10T14:54:29 Scheduler=Main
+   Partition=compute AllocNode:Sid=nia-login02:30550
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[0254-0257,0475-0476,0582-0584,0592-0594]
+   BatchHost=nia0254
+   NumNodes=12 NumCPUs=960 NumTasks=480 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=480,mem=2100000M,node=12,billing=240
+   AllocTRES=cpu=960,mem=2100000M,node=12,billing=480
+   Socks/Node=* NtasksPerN:B:S:C=40:0:*:* CoreSpec=*
+   MinCPUsNode=40 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/run_gizmo.sh
+   WorkDir=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo
+   Comment=/opt/slurm/bin/sbatch --export=NONE run_gizmo.sh 
+   StdErr=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_12.err
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/m/murray/dtolgay/gizmo/rerun_FIRE/gizmo/gizmo_runs/rerun_gizmo_12.out
+   Power=
+   
+
+sacct -j 13706295
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+13706295     rerun_giz+ rrg-rbond+   00:16:11                        00:02.152  00:01.406      0:0 
+13706295.ba+      batch rrg-rbond+   00:16:14   1350208K     13516K  00:00.346  00:00.584     0:15 
+13706295.ex+     extern rrg-rbond+   00:16:11    148744K      1092K  00:00.006  00:00.004      0:0 
+13706295.0   hydra_bst+ rrg-rbond+   00:16:12 317677292K  35351756K  00:01.799  00:00.817     0:15 
